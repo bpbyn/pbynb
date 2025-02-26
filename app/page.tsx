@@ -1,3 +1,4 @@
+import ParallelText from '@/motion-components/parallax-text';
 import { ReactLenis } from 'lenis/react';
 
 import About from './(sections)/about';
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <ParallelText baseVelocity={-2} />
       <Projects />
       <Contact />
     </ReactLenis>
