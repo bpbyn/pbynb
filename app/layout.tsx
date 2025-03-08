@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { DM_Mono, DM_Serif_Display, Poppins } from 'next/font/google';
 
+import Contact from './(sections)/contact';
 import './globals.css';
 
 const poppins = Poppins({
@@ -50,8 +51,10 @@ export default function RootLayout({
             <feColorMatrix type="saturate" values="0"></feColorMatrix>
           </filter>
         </svg>
+        <div className="absolute bottom-0 left-1/2 -z-20 h-1/2 w-full -translate-x-[50%] rounded-full bg-accent blur-[550px]" />
         <Navbar />
         <main>{children}</main>
+        <Contact />
       </body>
     </html>
   );

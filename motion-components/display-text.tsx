@@ -1,12 +1,12 @@
-import React from 'react';
-
-export default function DisplayText() {
+export default function DisplayText({
+  children,
+}: {
+  children: React.ReactNode;
+  className?: React.ComponentProps<'div'>['className'];
+}) {
   return (
     <div className="flex flex-nowrap items-center gap-x-4 whitespace-nowrap">
-      <h1 className="block space-x-2 text-8xl leading-[1]">
-        <span className="uppercase">SELECTED WORKS</span>
-        <span>&nbsp;—&nbsp;</span>
-      </h1>
+      <div className="block space-x-2 font-serif text-8xl leading-[1]">{children}</div>
     </div>
   );
 }

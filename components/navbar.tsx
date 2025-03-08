@@ -2,6 +2,7 @@
 
 import { anim } from '@/lib/utils';
 import ScrambleText from '@/motion-components/scramble-text';
+import { useLenis } from 'lenis/react';
 import { motion, useMotionValueEvent, useScroll } from 'motion/react';
 import { useRef, useState } from 'react';
 
@@ -53,6 +54,7 @@ const entrance = {
 };
 
 export default function Navbar() {
+  const lenis = useLenis();
   const container = useRef<HTMLDivElement>(null);
   const [scrollVal, setScrollVal] = useState<number>(0);
   const { scrollY } = useScroll();
@@ -60,6 +62,27 @@ export default function Navbar() {
   useMotionValueEvent(scrollY, 'change', (current) => {
     setScrollVal(current);
   });
+
+  const handleNavClick = (id: string) => {
+    const targetId = id.substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement && lenis) {
+      const rect = targetElement.getBoundingClientRect();
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      let targetPosition = rect.top + scrollTop;
+      if (targetId === 'contact') {
+        targetPosition -= window.innerHeight - 3000;
+      }
+
+      // Scroll to the calculated position
+      lenis.scrollTo(targetPosition, {
+        duration: 1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    }
+  };
 
   return (
     <motion.header
@@ -71,7 +94,13 @@ export default function Navbar() {
         <motion.h3 className="text-3xl">bpbyn.</motion.h3>
         <nav className="flex items-center justify-evenly gap-8 font-mono text-lg font-medium text-muted">
           {navigation.map((nav, i) => (
-            <a href={nav.id} key={`nav-${i}`} id={nav.id} className="hover:text-foreground">
+            <a
+              href={nav.id}
+              onClick={() => handleNavClick(nav.id)}
+              key={`nav-${i}`}
+              id={nav.id}
+              className="hover:text-foreground"
+            >
               <ScrambleText>{nav.title}</ScrambleText>
             </a>
           ))}

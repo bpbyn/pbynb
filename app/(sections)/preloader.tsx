@@ -42,7 +42,7 @@ const CubicBezierSvg = ({ width, height }: { width: number; height: number }) =>
     M0 0 
     Q${width / 2} 300 ${width} 0
     L${width} ${height}
-    Q${width / 2} ${height - 300} 0 ${height}
+    Q${width / 2} ${height - 500} 0 ${height}
     L0 0
   `;
 

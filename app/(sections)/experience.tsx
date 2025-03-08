@@ -12,8 +12,11 @@ export default function Experience() {
   ];
 
   return (
-    <section className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh]">
-      <div className="flex items-end justify-between">
+    <section
+      className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh]"
+      id="experience"
+    >
+      <div className="relative z-20 flex items-end justify-between">
         <div>
           <span className="font-mono text-xl font-light text-muted">
             <ScrambleText>{`// WHERE I'VE BEEN?`}</ScrambleText>
@@ -21,7 +24,7 @@ export default function Experience() {
           <h3 className="max-w-md text-8xl">Professional Timeline</h3>
         </div>
         <div className="flex justify-between gap-8">
-          <div className="min-w-fit font-mono text-xl font-light text-muted">(EXPERIENCE)</div>
+          <div className="min-w-fit font-mono text-lg font-light text-muted">(EXPERIENCE)</div>
           <div className="max-w-sm">
             Every project, role, and collaboration has shaped the way I think, create, and solve
             problems.
@@ -63,7 +66,7 @@ export default function Experience() {
         ></div>
       </div>
 
-      <div className="absolute -bottom-24 left-24 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[250px]" />
+      <div className="absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[300px]" />
       <div className="absolute right-0 top-0 z-10 h-1/2 w-1/2 bg-accent blur-[400px]" />
     </section>
   );

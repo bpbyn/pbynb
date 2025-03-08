@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import {
   motion,
   useAnimationFrame,
@@ -12,15 +13,24 @@ import {
 } from 'motion/react';
 import { useRef } from 'react';
 
-import DisplayText from './display-text';
-
-export default function ParallelText({ baseVelocity = -5 }: { baseVelocity?: number }) {
+export default function ParallelText({
+  baseVelocity = -5,
+  children,
+  className,
+  style,
+}: {
+  children: React.ReactNode;
+  baseVelocity?: number;
+  className?: React.ComponentProps<'div'>['className'];
+  style?: React.CSSProperties;
+}) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
+    stiffness: 500,
     damping: 50,
-    stiffness: 400,
+    mass: 0.3,
   });
 
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
@@ -45,21 +55,22 @@ export default function ParallelText({ baseVelocity = -5 }: { baseVelocity?: num
     }
 
     moveBy += directionFactor.current * moveBy * velocityFactor.get();
-
     baseX.set(baseX.get() + moveBy);
   });
+
   return (
     <div
-      className="relative m-0 flex flex-nowrap overflow-hidden whitespace-nowrap pb-5"
-      style={{ background: 'white' }}
+      className="relative m-0 flex flex-nowrap overflow-hidden whitespace-nowrap"
+      style={{ background: 'white', ...style }}
     >
       <motion.div
-        className="flex flex-nowrap gap-x-5 whitespace-nowrap py-4 text-primary will-change-transform"
+        className={cn(
+          'flex flex-nowrap gap-x-5 whitespace-nowrap py-4 text-primary will-change-scroll',
+          className
+        )}
         style={{ x }}
       >
-        <DisplayText />
-        <DisplayText />
-        <DisplayText />
+        {children}
       </motion.div>
     </div>
   );

@@ -4,6 +4,7 @@ import Button from '@/components/button';
 import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import Image from 'next/image';
 
 const about = [
   'I’m a Full Stack Developer specializing in intuitive front-end development.',
@@ -14,9 +15,10 @@ export default function Hero() {
   const { scrollYProgress } = useScroll();
 
   const smoothVelocity = useSpring(scrollYProgress, {
-    stiffness: 1000,
-    damping: 200,
-    mass: 1,
+    stiffness: 100,
+    damping: 20,
+    restDelta: 0.001,
+    mass: 0.00001,
   });
 
   const opacity = useTransform(smoothVelocity, [0, 0.1], [1, 0], {
@@ -52,17 +54,40 @@ export default function Hero() {
           <Button>
             <h3 className="font-mono font-medium text-primary">SAY HELLO</h3>
           </Button>
-          <span className="w-full text-left font-mono font-light text-muted">
+          <span className="w-full text-left font-mono text-lg font-light text-muted">
             © 2025 BULACAN, PH
           </span>
         </div>
-        <div className="flex flex-col items-end justify-between">
-          <div className="h-full">image here</div>
+        <div className="flex h-full flex-col items-end justify-between gap-32">
+          <div />
+          <div className="relative h-fit w-fit">
+            {/* <Image
+              src={'/me/me.png'}
+              alt="brian punongbayan"
+              className="rounded-3xl object-cover grayscale"
+              height={300}
+              width={300}
+            /> */}
+            <Image
+              src={'/me/me.png'}
+              alt="brian punongbayan"
+              className="rounded-3xl object-cover grayscale"
+              width={500}
+              height={500}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxWidth: '300px',
+              }}
+              priority
+            />
+          </div>
           <div className="relative h-full text-8xl tracking-tight text-foreground">
             <StaggerText className="font-serif text-8xl">front-end</StaggerText>
             <StaggerText className="font-serif text-8xl">developer</StaggerText>
           </div>
-          <span className="w-full text-right font-mono font-light text-muted">
+          <span className="w-full text-right font-mono text-lg font-light text-muted">
             ( SCROLL TO EXPLORE )
           </span>
         </div>

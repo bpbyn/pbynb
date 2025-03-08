@@ -1,12 +1,11 @@
-import ParallelText from '@/motion-components/parallax-text';
 import { ReactLenis } from 'lenis/react';
 
 import About from './(sections)/about';
-import Contact from './(sections)/contact';
 import Experience from './(sections)/experience';
 import Hero from './(sections)/hero';
 import PreLoader from './(sections)/preloader';
 import Projects from './(sections)/projects';
+import Works from './(sections)/works';
 
 export default function Home() {
   return (
@@ -15,9 +14,8 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
-      <ParallelText baseVelocity={-2} />
+      <Works />
       <Projects />
-      <Contact />
     </ReactLenis>
   );
 }

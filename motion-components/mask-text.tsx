@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const variants = {
   initial: { y: '150px' },
-  animate: { y: '0' },
+  animate: { y: 0 },
 };
 
 export default function MaskText({

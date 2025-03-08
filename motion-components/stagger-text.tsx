@@ -34,7 +34,12 @@ export default function StaggerText({
   className?: React.ComponentProps<'div'>['className'];
 }) {
   return (
-    <motion.div className={cn('flex overflow-hidden', className)} {...anim(letters(stagger))}>
+    <motion.div
+      className={cn('flex overflow-hidden', className)}
+      {...anim(letters(stagger))}
+      // whileInView={{ ...anim(letters(stagger)) }}
+      // viewport={{ once: true }}
+    >
       {children.split('').map((l, i) => (
         <motion.span key={i} variants={individualLetter} className="inline-flex">
           {l}
