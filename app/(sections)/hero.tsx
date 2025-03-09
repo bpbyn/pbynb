@@ -3,6 +3,7 @@
 import Button from '@/components/button';
 import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
+import TiltCard from '@/motion-components/tilt-card';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 
@@ -38,7 +39,8 @@ export default function Hero() {
       <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" />
       <div className="absolute -bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
       {/* gradients */}
-      <div className="grid h-full grid-cols-2 overflow-hidden pt-20">
+
+      <div className="grid h-full grid-cols-2 gap-36 overflow-hidden pt-20">
         <div className="flex h-full flex-col items-start justify-end gap-32">
           <div className="relative font-serif text-9xl leading-[6.5rem] tracking-tight text-foreground">
             <StaggerText stagger={true}>brian</StaggerText>
@@ -58,31 +60,37 @@ export default function Hero() {
             © 2025 BULACAN, PH
           </span>
         </div>
-        <div className="flex h-full flex-col items-end justify-between gap-32">
+        <div className="grid h-full place-content-end gap-32">
           <div />
-          <div className="relative h-fit w-fit">
-            {/* <Image
-              src={'/me/me.png'}
-              alt="brian punongbayan"
-              className="rounded-3xl object-cover grayscale"
-              height={300}
-              width={300}
-            /> */}
-            <Image
-              src={'/me/me.png'}
-              alt="brian punongbayan"
-              className="rounded-3xl object-cover grayscale"
-              width={500}
-              height={500}
-              sizes="(max-width: 768px) 100vw, 50vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-                maxWidth: '300px',
-              }}
-              priority
-            />
-          </div>
+          <motion.div
+            className="relative grid h-full w-full cursor-pointer place-content-start"
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{
+              duration: 2,
+              ease: [0.76, 0, 0.1, 1],
+            }}
+          >
+            <TiltCard>
+              <Image
+                src={'/me/me.png'}
+                alt="brian punongbayan"
+                className="rounded-3xl object-cover"
+                width={500}
+                height={500}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '300px',
+                  transform: 'translateZ(75px)',
+                }}
+                placeholder="blur"
+                blurDataURL={'/images/placeholder.svg'}
+                priority
+              />
+            </TiltCard>
+          </motion.div>
           <div className="relative h-full text-8xl tracking-tight text-foreground">
             <StaggerText className="font-serif text-8xl">front-end</StaggerText>
             <StaggerText className="font-serif text-8xl">developer</StaggerText>

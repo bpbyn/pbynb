@@ -31,11 +31,11 @@ export default function Contact() {
                 ))}
               </div>
               <div className="relative">
-                <div className="group absolute bottom-4 right-0">
+                <div className="group absolute bottom-8 right-0">
                   {/* <figure className="relative rounded-full bg-gradient-to-tl from-transparent to-muted p-2 size-16 "> */}
                   <figure className="relative size-16 rounded-full border bg-transparent p-2">
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out group-hover:-translate-y-6">
-                      <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
+                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
                     </div>
                     <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
                       {/* <circle
@@ -57,21 +57,30 @@ export default function Contact() {
                   </figure>
                 </div>
               </div>
-              <span className="self-end text-right text-sm text-muted">
+              {/* <span className="self-end text-right text-sm text-muted">
                 © 2025 Brian Punongbayan. All rights reserved.
-              </span>
+              </span> */}
             </div>
           </div>
           <div>
             <ParallelText
               baseVelocity={4}
               style={{ background: 'black' }}
-              className="py-4 text-white"
+              className="relative py-4 text-white"
             >
               {[...Array(4)].map((_, i) => (
                 <DisplayText key={`displayTxt-${i}`}>
                   <span className="uppercase">Brian Punongbayan</span>
-                  <span className="font-mono text-lg text-muted">&nbsp;[2025]&nbsp;&nbsp;</span>
+                  <span className="font-mono text-lg text-muted">&nbsp;[2025]&nbsp;</span>
+                  {/* <div className="flex gap-8">
+                    <span className="uppercase">&nbsp;Brian Punongbayan</span>
+                    <div className="flex flex-col items-center justify-center font-mono text-xs text-muted">
+                      <span>All</span>
+                      <span>Rights</span>
+                      <span>Reserved</span>
+                      <span className="text-sm">[2025]</span>
+                    </div>
+                  </div> */}
                 </DisplayText>
               ))}
             </ParallelText>
