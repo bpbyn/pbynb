@@ -3,6 +3,7 @@
 import { useDimension } from '@/hooks/use-dimension';
 import { cn } from '@/lib/utils';
 import ScrambleText from '@/motion-components/scramble-text';
+import StaggerText from '@/motion-components/stagger-text';
 import { MotionValue, motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -51,9 +52,12 @@ export default function About() {
           <div className="flex flex-col items-start justify-start gap-24">
             <div ref={scaleRef}>
               <span className="font-mono text-xl font-light text-muted">
-                <ScrambleText>{`// WHO AM I?`}</ScrambleText>
+                <ScrambleText className="px-0">{`// WHO AM I?`}</ScrambleText>
               </span>
-              <h3 className="max-w-md text-8xl">Meet the Maker</h3>
+              <h3 className="max-w-md text-8xl">
+                <StaggerText stagger={false}>Meet the</StaggerText>
+                <StaggerText stagger={false}>Maker</StaggerText>
+              </h3>
             </div>
             <div className="flex h-full gap-8">
               <div className="min-w-fit font-mono text-lg font-light text-muted">(ABOUT ME)</div>

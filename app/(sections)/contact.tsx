@@ -3,6 +3,7 @@
 import { Icons } from '@/components/icons';
 import DisplayText from '@/motion-components/display-text';
 import ParallelText from '@/motion-components/parallel-text';
+import ScrambleText from '@/motion-components/scramble-text';
 import React from 'react';
 
 export default function Contact() {
@@ -15,7 +16,9 @@ export default function Contact() {
           {/* <div className="absolute h-1/2 w-full translate-y-[50%] bg-accent blur-[350px]" /> */}
           <div className="relative grid h-full grid-cols-2 gap-52 px-16 pt-8">
             <div className="grid content-start space-y-1 pt-16">
-              <span className="font-mono text-xl font-light text-muted">{`// WHAT ARE YOU WAITING FOR?`}</span>
+              <span className="font-mono text-xl font-light text-muted">
+                <ScrambleText className="px-0">{`// WHAT ARE YOU WAITING FOR?`}</ScrambleText>
+              </span>
               <h3 className="max-w-md text-8xl">Reach out, don’t doubt— let’s figure it out</h3>
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">

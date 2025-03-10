@@ -57,7 +57,7 @@ export default function Projects() {
       <div className="relative z-20 flex items-end justify-between gap-16">
         <div>
           <span className="font-mono text-xl font-light text-muted">
-            <ScrambleText>{`// WHAT I'VE BUILT?`}</ScrambleText>
+            <ScrambleText className="px-0">{`// WHAT I'VE BUILT?`}</ScrambleText>
           </span>
           <h3 className="max-w-md text-8xl">Pixels and Code</h3>
         </div>

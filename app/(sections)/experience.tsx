@@ -19,6 +19,11 @@ export default function Experience() {
     offset: ['end end', 'end end'],
   });
 
+  const { scrollYProgress: scrollScaleProgress } = useScroll({
+    target: exitAnimationRef,
+    offset: ['start start', 'end end'],
+  });
+
   const smoothEntryScale = useSpring(entryScrollProgress, {
     stiffness: 500,
     damping: 40,
@@ -31,8 +36,15 @@ export default function Experience() {
     mass: 0.3,
   });
 
+  const smoothButtonScale = useSpring(scrollScaleProgress, {
+    stiffness: 500,
+    damping: 40,
+    mass: 0.3,
+  });
+
   const scale = useTransform(smoothEntryScale, [0, 1], [0, 1]);
   const scaleExit = useTransform(smoothExitScale, [0, 1], [1, 0]);
+  const scaleButton = useTransform(smoothButtonScale, [0, 1], [0, 1]);
 
   const companies = [
     'ing',
@@ -50,7 +62,7 @@ export default function Experience() {
       <div className="relative z-20 flex items-end justify-between" ref={scaleRef}>
         <div>
           <span className="font-mono text-xl font-light text-muted">
-            <ScrambleText>{`// WHERE I'VE BEEN?`}</ScrambleText>
+            <ScrambleText className="px-0">{`// WHERE I'VE BEEN?`}</ScrambleText>
           </span>
           <h3 className="max-w-md text-8xl">Professional Timeline</h3>
         </div>
@@ -63,15 +75,15 @@ export default function Experience() {
         </div>
       </div>
       <div className="relative h-full w-full" ref={exitAnimationRef}>
-        <motion.div className="fixed right-24 top-24 z-20 w-full">
+        <motion.div className="fixed right-20 top-24 z-20 w-full">
           <div className="flex items-center justify-end gap-4">
             <motion.div style={{ scale: scaleExit }}>
               <motion.div
-                className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-slate-500/35 px-6 py-4 font-mono text-xl"
+                className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-slate-500/35 px-6 py-4 font-mono text-lg shadow-md"
                 style={{ scale }}
               >
                 <span>RESUME</span>
-                <span className="flex h-5 w-5 items-center justify-center rounded-full border">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent">
                   ↓
                 </span>
               </motion.div>
@@ -79,11 +91,38 @@ export default function Experience() {
             <motion.div style={{ scale: scaleExit }}>
               <motion.div className="relative" style={{ scale }}>
                 <div className="group">
-                  <figure className="relative size-14 overflow-hidden rounded-full bg-slate-500/35 p-2 group-hover:bg-accent">
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out group-hover:-translate-y-14">
-                      <Icons.arrow45deg className="h-5 w-5 -rotate-45" />
+                  {/* <figure className="relative overflow-hidden rounded-full bg-slate-500/35 p-2 shadow-md group-hover:bg-accent">
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out group-hover:-translate-y-6">
+                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
                     </div>
-                    <svg id="progress" width="100" height="100" viewBox="0 0 100 100"></svg>
+                    <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
+                      
+                    </svg>
+                  </figure> */}
+                  <figure className="relative overflow-hidden">
+                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ease-in-out group-hover:-translate-y-[-100px]">
+                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
+                    </span>
+                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[-100px] transition-all duration-1000 ease-in-out group-hover:-translate-y-1/2">
+                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
+                    </span>
+                    <svg
+                      id="progress"
+                      width="100"
+                      height="100"
+                      viewBox="0 0 100 100"
+                      className="-rotate-90"
+                    >
+                      <circle cx="50" cy="50" r="30" pathLength="1" className="fill-slate-500/35" />
+                      <motion.circle
+                        cx="50"
+                        cy="50"
+                        r="30"
+                        pathLength="1"
+                        className="fill-none stroke-accent stroke-[0.2rem]"
+                        style={{ pathLength: scaleButton }}
+                      />
+                    </svg>
                   </figure>
                 </div>
               </motion.div>

@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="absolute -bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
       {/* gradients */}
 
-      <div className="grid h-full grid-cols-2 gap-36 overflow-hidden pt-20">
+      <div className="grid h-full grid-cols-2">
         <div className="flex h-full flex-col items-start justify-end gap-32">
           <div className="relative font-serif text-9xl leading-[6.5rem] tracking-tight text-foreground">
             <StaggerText stagger={true}>brian</StaggerText>
@@ -64,8 +64,8 @@ export default function Hero() {
           <div />
           <motion.div
             className="relative grid h-full w-full cursor-pointer place-content-start"
-            initial={{ x: 100 }}
-            animate={{ x: 0 }}
+            initial={{ opacity: 0, y: 800 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 2,
               ease: [0.76, 0, 0.1, 1],
