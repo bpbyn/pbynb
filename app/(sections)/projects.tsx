@@ -1,6 +1,7 @@
 'use client';
 
 import ScrambleText from '@/motion-components/scramble-text';
+import StaggerText from '@/motion-components/stagger-text';
 import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
@@ -59,14 +60,30 @@ export default function Projects() {
           <span className="font-mono text-xl font-light text-muted">
             <ScrambleText className="px-0">{`// WHAT I'VE BUILT?`}</ScrambleText>
           </span>
-          <h3 className="max-w-md text-8xl">Pixels and Code</h3>
+          <h3 className="max-w-md text-8xl">
+            <StaggerText stagger={true} quick={true}>
+              Pixels and
+            </StaggerText>
+            <StaggerText stagger={false} quick={true}>
+              Code
+            </StaggerText>
+          </h3>
         </div>
         <div className="flex justify-between gap-8">
           <div className="min-w-fit font-mono text-lg font-light text-muted">(WORKS)</div>
-          <div className="max-w-sm">
+          <motion.div
+            className="max-w-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              ease: 'easeInOut',
+              duration: 1.5,
+            }}
+          >
             These are projects I’ve put my time and effort to complete. I hope you’ll like it as
             much as I do!
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="flex items-start justify-between pt-16">

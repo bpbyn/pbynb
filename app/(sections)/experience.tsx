@@ -2,12 +2,14 @@
 
 import { Icons } from '@/components/icons';
 import ScrambleText from '@/motion-components/scramble-text';
+import StaggerText from '@/motion-components/stagger-text';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
 export default function Experience() {
   const scaleRef = useRef(null);
   const exitAnimationRef = useRef(null);
+  const buttonProgressRef = useRef(null);
 
   const { scrollYProgress: entryScrollProgress } = useScroll({
     target: scaleRef,
@@ -16,12 +18,12 @@ export default function Experience() {
 
   const { scrollYProgress: exitScrollProgress } = useScroll({
     target: exitAnimationRef,
-    offset: ['end end', 'end end'],
+    offset: ['start end', 'end end'],
   });
 
   const { scrollYProgress: scrollScaleProgress } = useScroll({
-    target: exitAnimationRef,
-    offset: ['start start', 'end end'],
+    target: buttonProgressRef,
+    offset: ['start start', '0.8 end'],
   });
 
   const smoothEntryScale = useSpring(entryScrollProgress, {
@@ -46,6 +48,10 @@ export default function Experience() {
   const scaleExit = useTransform(smoothExitScale, [0, 1], [1, 0]);
   const scaleButton = useTransform(smoothButtonScale, [0, 1], [0, 1]);
 
+  // useMotionValueEvent(scrollScaleProgress, 'change', (current) => {
+  //   console.log(current);
+  // });
+
   const companies = [
     'ing',
     'asurion',
@@ -58,23 +64,41 @@ export default function Experience() {
     <section
       className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh]"
       id="experience"
+      ref={buttonProgressRef}
     >
       <div className="relative z-20 flex items-end justify-between" ref={scaleRef}>
         <div>
           <span className="font-mono text-xl font-light text-muted">
             <ScrambleText className="px-0">{`// WHERE I'VE BEEN?`}</ScrambleText>
           </span>
-          <h3 className="max-w-md text-8xl">Professional Timeline</h3>
+          <h3 className="max-w-md text-8xl">
+            <StaggerText stagger={true} quick={true}>
+              Professional
+            </StaggerText>
+            <StaggerText stagger={false} quick={true}>
+              Timeline
+            </StaggerText>
+          </h3>
         </div>
         <div className="flex justify-between gap-8">
           <div className="min-w-fit font-mono text-lg font-light text-muted">(EXPERIENCE)</div>
-          <div className="max-w-sm">
+          <motion.div
+            className="max-w-sm"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              ease: 'easeInOut',
+              duration: 1.5,
+            }}
+          >
             Every project, role, and collaboration has shaped the way I think, create, and solve
             problems.
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="relative h-full w-full" ref={exitAnimationRef}>
+
+      <span className="inline">
         <motion.div className="fixed right-20 top-24 z-20 w-full">
           <div className="flex items-center justify-end gap-4">
             <motion.div style={{ scale: scaleExit }}>
@@ -91,14 +115,6 @@ export default function Experience() {
             <motion.div style={{ scale: scaleExit }}>
               <motion.div className="relative" style={{ scale }}>
                 <div className="group">
-                  {/* <figure className="relative overflow-hidden rounded-full bg-slate-500/35 p-2 shadow-md group-hover:bg-accent">
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out group-hover:-translate-y-6">
-                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
-                    </div>
-                    <svg id="progress" width="100" height="100" viewBox="0 0 100 100">
-                      
-                    </svg>
-                  </figure> */}
                   <figure className="relative overflow-hidden">
                     <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ease-in-out group-hover:-translate-y-[-100px]">
                       <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
@@ -154,8 +170,9 @@ export default function Experience() {
             </div>
           </div>
         ))}
-      </div>
-      <div className="sticky top-0 h-[100svh]">
+      </span>
+
+      <div className="sticky top-0 h-[100svh]" ref={exitAnimationRef}>
         <div
           className="relative border-t border-t-muted bg-background_second p-8"
           style={{

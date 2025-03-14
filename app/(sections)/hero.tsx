@@ -17,19 +17,18 @@ export default function Hero() {
 
   const smoothVelocity = useSpring(scrollYProgress, {
     stiffness: 100,
-    damping: 20,
-    restDelta: 0.001,
-    mass: 0.00001,
+    damping: 10,
+    mass: 0.1,
   });
 
   const opacity = useTransform(smoothVelocity, [0, 0.1], [1, 0], {
-    clamp: false,
+    clamp: true,
   });
   const y = useTransform(smoothVelocity, [0, 0.2], [0, 300], {
-    clamp: false,
+    clamp: true,
   });
   const scale = useTransform(smoothVelocity, [0, 0.1], [1, 0.9], {
-    clamp: false,
+    clamp: true,
   });
 
   return (

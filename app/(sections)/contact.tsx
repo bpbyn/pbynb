@@ -2,8 +2,10 @@
 
 import { Icons } from '@/components/icons';
 import DisplayText from '@/motion-components/display-text';
+import MaskText from '@/motion-components/mask-text';
 import ParallelText from '@/motion-components/parallel-text';
 import ScrambleText from '@/motion-components/scramble-text';
+import StaggerText from '@/motion-components/stagger-text';
 import React from 'react';
 
 export default function Contact() {
@@ -19,18 +21,39 @@ export default function Contact() {
               <span className="font-mono text-xl font-light text-muted">
                 <ScrambleText className="px-0">{`// WHAT ARE YOU WAITING FOR?`}</ScrambleText>
               </span>
-              <h3 className="max-w-md text-8xl">Reach out, don’t doubt— let’s figure it out</h3>
+              <h3 className="grid max-w-md gap-1 text-8xl">
+                <StaggerText stagger={true} quick={false}>
+                  Reach
+                </StaggerText>
+                <StaggerText stagger={false} quick={false}>
+                  out, don’t
+                </StaggerText>
+                <StaggerText stagger={true} quick={false}>
+                  doubt—
+                </StaggerText>
+                <StaggerText stagger={false} quick={false} className="pb-2">
+                  let’s figure
+                </StaggerText>
+                <StaggerText stagger={true} quick={false}>
+                  it out
+                </StaggerText>
+              </h3>
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">
               <div className="flex h-full flex-col justify-center gap-8 font-serif text-5xl">
                 {['ABOUT', 'EXPERIENCE', 'PROJECTS'].map((s, i) => (
-                  <div
-                    key={`shortcut-${i}`}
-                    className="flex items-center justify-between border-b border-b-muted pb-4 hover:text-red-500"
-                  >
-                    <span>{s}</span>
-                    <Icons.arrow45deg className="h-9 w-9" />
-                  </div>
+                  <MaskText key={`shortcut-${i}`} duration={1.9}>
+                    <div className="group relative grid overflow-hidden border-b border-b-muted">
+                      <div className="ease-expo absolute flex w-full translate-y-0 cursor-pointer items-center justify-between overflow-hidden px-4 pb-4 transition-all duration-500 group-hover:-translate-y-full">
+                        <span>{s}</span>
+                        <Icons.arrow45deg className="ease-expo h-9 w-9 transition-all duration-500 group-hover:-translate-x-8 group-hover:-rotate-45" />
+                      </div>
+                      <div className="ease-expo flex translate-y-full cursor-pointer items-center justify-between px-4 pb-4 transition-all duration-500 group-hover:translate-y-0">
+                        <span>{s}</span>
+                        <Icons.arrow45deg className="ease-expo h-9 w-9 transition-all duration-500 group-hover:-rotate-45" />
+                      </div>
+                    </div>
+                  </MaskText>
                 ))}
               </div>
               <div className="relative">

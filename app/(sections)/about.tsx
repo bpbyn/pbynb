@@ -55,13 +55,30 @@ export default function About() {
                 <ScrambleText className="px-0">{`// WHO AM I?`}</ScrambleText>
               </span>
               <h3 className="max-w-md text-8xl">
-                <StaggerText stagger={false}>Meet the</StaggerText>
-                <StaggerText stagger={false}>Maker</StaggerText>
+                <StaggerText stagger={true} quick={true}>
+                  Meet the
+                </StaggerText>
+                <StaggerText stagger={false} quick={true}>
+                  Maker
+                </StaggerText>
               </h3>
             </div>
             <div className="flex h-full gap-8">
               <div className="min-w-fit font-mono text-lg font-light text-muted">(ABOUT ME)</div>
-              <div className="max-w-sm space-y-6 xl:max-w-lg">
+              <motion.div
+                className="max-w-sm space-y-6 xl:max-w-lg"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  ease: 'easeInOut',
+                  duration: 1.5,
+                }}
+              >
+                {/* <CharacterScrollText
+                  paragraph={`Hi there! I’m Brian, a developer from the Philippines with a passion for solving problems and building meaningful solutions through technology.\nWhen I’m not coding, I enjoy staying up-to-date with the latest trends and innovations in the tech industry, constantly exploring how emerging technologies can shape the future.\nOutside of work, I wear many hats. I’m a proud “radiohead” and a hands-on dad, often creating fun and unique lullabies to help my little one drift off to sleep. Before parenthood, I was an avid runner who loved pushing his limits. Running remains close to my heart, and I look forward to lacing up my shoes and getting back to it soon.\nI’m always open to new opportunities, collaborations, and challenges that inspire creativity and drive progress. Let’s build something amazing together!`}
+                /> */}
+
                 <p>
                   Hi there! I’m Brian, a developer from the Philippines with a passion for solving
                   problems and building meaningful solutions through technology.
@@ -82,7 +99,7 @@ export default function About() {
                   I’m always open to new opportunities, collaborations, and challenges that inspire
                   creativity and drive progress. Let’s build something amazing together!
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
