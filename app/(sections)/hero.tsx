@@ -16,9 +16,9 @@ export default function Hero() {
   const { scrollYProgress } = useScroll();
 
   const smoothVelocity = useSpring(scrollYProgress, {
-    stiffness: 100,
+    stiffness: 1000,
     damping: 10,
-    mass: 0.1,
+    mass: 0.00001,
   });
 
   const opacity = useTransform(smoothVelocity, [0, 0.1], [1, 0], {
@@ -52,8 +52,8 @@ export default function Hero() {
               <MaskText key={i}>{l}&nbsp;</MaskText>
             ))}
           </div>
-          <Button>
-            <h3 className="font-mono font-medium text-primary">SAY HELLO</h3>
+          <Button className="bg-foreground px-6 py-3 text-black">
+            <h3 className="font-mono font-medium">SAY HELLO</h3>
           </Button>
           <span className="w-full text-left font-mono text-lg font-light text-muted">
             © 2025 BULACAN, PH

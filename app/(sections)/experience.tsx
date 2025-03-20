@@ -103,13 +103,10 @@ export default function Experience() {
           <div className="flex items-center justify-end gap-4">
             <motion.div style={{ scale: scaleExit }}>
               <motion.div
-                className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-slate-500/35 px-6 py-4 font-mono text-lg shadow-md"
+                className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-slate-500/35 px-8 py-4 font-mono text-lg"
                 style={{ scale }}
               >
-                <span>RESUME</span>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent">
-                  ↓
-                </span>
+                <span className="group-hover:scale-125">RESUME</span>
               </motion.div>
             </motion.div>
             <motion.div style={{ scale: scaleExit }}>
@@ -129,7 +126,13 @@ export default function Experience() {
                       viewBox="0 0 100 100"
                       className="-rotate-90"
                     >
-                      <circle cx="50" cy="50" r="30" pathLength="1" className="fill-slate-500/35" />
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="30"
+                        pathLength="1"
+                        className="fill-transparent stroke-white"
+                      />
                       <motion.circle
                         cx="50"
                         cy="50"

@@ -1,12 +1,15 @@
 'use client';
 
+import Cursor from '@/motion-components/cursor';
 import ScrambleText from '@/motion-components/scramble-text';
 import StaggerText from '@/motion-components/stagger-text';
 import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 export default function Projects() {
+  const linksRef = useRef<HTMLDivElement[]>([]);
   const ref = useRef(null);
   const scaleRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -41,11 +44,26 @@ export default function Projects() {
   const works = [
     {
       name: 'Shot Puno',
-      videoURL: '',
+      projectType: 'Card Game',
+      imgOverlay: '/images/shot-puno-landing.png',
+      videoURL: '../media/shot-puno.mp4',
+      href: 'https://shot-puno.vercel.app/',
+      techUsed: ['NextJS', 'TailwindCSS', 'Shadcn', 'Motion', 'Firebase'],
     },
     {
-      name: 'Shot Puno',
-      videoURL: '',
+      name: 'Northern Kaffeine POS',
+      projectType: 'POS Application',
+      imgOverlay: '/images/nk-pos-landing.png',
+      videoURL: '../media/nk-pos.mp4',
+      href: 'https://nk-pos-dev.vercel.app/',
+      techUsed: [
+        'NextJS',
+        'TailwindCSS',
+        'Zustand',
+        'Shadcn',
+        'Firebase',
+        'Firebase Authentication',
+      ],
     },
   ];
 
@@ -55,6 +73,7 @@ export default function Projects() {
       id="projects"
       style={{ scale }}
     >
+      <Cursor linksRef={linksRef} />
       <div className="relative z-20 flex items-end justify-between gap-16">
         <div>
           <span className="font-mono text-xl font-light text-muted">
@@ -106,114 +125,58 @@ export default function Projects() {
           className="relative z-20 flex flex-col items-end justify-center gap-20 pt-8 text-4xl"
           ref={ref}
         >
-          {/* <div className="h-[28rem] w-[32rem] rounded-xl bg-red">
-            <div className="h-[16rem] w-[16rem] backdrop-blur-md"></div>
-          </div> */}
-          {/* <video
-            muted={true}
-            autoplay={true}
-            width="1920"
-            height="1080"
-            loop={true}
-            playsinline=""
-            preload="auto"
-            className="pointer-events-none h-full w-full object-cover object-center"
-          >
-            <source src="/videos/compress.mp4" type="video/mp4">
-            <source src="/videos/compress.webm" type="video/webm">Your browser does not support the video tag
-          </video> */}
-          {/* <div className="rounded-xl bg-gray-400 p-16">
-            <div className="h-[700px] w-full backdrop-blur-lg">
-              <video
-                src="../media/shot-puno.mp4"
-                // autoPlay
-                muted
-                loop
-                playsInline
-                className="max-h-full max-w-full rounded-lg object-contain"
-              />
+          {works.map((w, i) => (
+            <div
+              key={`projects-${i}`}
+              ref={(ref) => {
+                if (ref) {
+                  linksRef.current[i] = ref;
+                }
+              }}
+            >
+              <Link href={w.href} target="_blank">
+                <div className="grid gap-8" ref={i === 1 ? scaleRef : null}>
+                  <div className="relative aspect-square overflow-hidden rounded-2xl p-16">
+                    <video
+                      src={w.videoURL}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="relative z-10 h-full w-full rounded-xl"
+                    />
+                    {/* Overlay image */}
+                    <div className="pointer-events-none absolute inset-0 z-0 blur-xl">
+                      <Image
+                        src={w.imgOverlay}
+                        alt="landing page"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </div>
+                  </div>
+                  <div className="relative flex items-center justify-between gap-16">
+                    <div className="flex flex-col">
+                      <span className="font-mono text-lg text-muted">{w.projectType}</span>
+                      <span className="whitespace-nowrap text-3xl font-bold">{w.name}</span>
+                    </div>
+                    <div className="flex h-full flex-wrap items-center gap-2">
+                      {w.techUsed.map((t, i) => (
+                        <span
+                          className="rounded-full border border-muted px-4 py-1 text-xs"
+                          key={`tech-${i}`}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Link>
             </div>
-          </div> */}
-          <div className="grid gap-8">
-            <div className="relative aspect-square overflow-hidden rounded-2xl p-16">
-              <video
-                src="../media/shot-puno.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="relative z-10 h-full w-full rounded-xl"
-              />
-              {/* Overlay image */}
-              <div className="pointer-events-none absolute inset-0 z-0 blur-xl">
-                <Image
-                  src={'/images/shot-puno-landing.png'}
-                  alt="landing page"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-            <div className="relative flex items-center justify-between gap-16">
-              <div className="flex flex-col">
-                <span className="font-mono text-lg text-muted">Card Game</span>
-                <span className="whitespace-nowrap text-3xl font-bold">Shot Puno!</span>
-              </div>
-              <div className="flex h-full flex-wrap items-center gap-2">
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">NextJS</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">
-                  TailwindCSS
-                </span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Shadcn</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Motion</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Firebase</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid gap-8" ref={scaleRef}>
-            <div className="relative aspect-square overflow-hidden rounded-2xl p-16">
-              <video
-                src="../media/nk-pos.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="relative z-10 h-full w-full rounded-xl"
-              />
-              {/* Overlay image */}
-              <div className="pointer-events-none absolute inset-0 z-0 blur-xl">
-                <Image
-                  src={'/images/nk-pos-landing.png'}
-                  alt="landing page"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-            </div>
-            <div className="relative flex items-center justify-between gap-16">
-              <div className="flex flex-col">
-                <span className="font-mono text-lg text-muted">POS Application</span>
-                <span className="whitespace-nowrap text-3xl font-bold">Northern Kaffeine</span>
-              </div>
-              <div className="flex h-full flex-wrap items-center gap-2">
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">NextJS</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Zustand</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">
-                  TailwindCSS
-                </span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Shadcn</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">Firebase</span>
-                <span className="rounded-full border border-muted px-4 py-1 text-xs">
-                  Firebase Authentication
-                </span>
-              </div>
-            </div>
-          </div>
+          ))}
         </aside>
       </div>
       <div className="absolute right-0 top-0 z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
