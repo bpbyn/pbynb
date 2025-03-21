@@ -38,6 +38,16 @@ export default function Misc() {
           </span>
         </span>
       </a> */}
+      {/* <span className="relative z-20 block overflow-hidden transition-all">
+        <motion.span
+          data-after="RESUME"
+          className="after:ease-expo block after:absolute after:left-0 after:block after:translate-y-0 after:transition-all after:duration-500 after:content-[attr(data-after)] sm:group-hover:after:-translate-y-[100%]"
+        >
+          <span className="ease-expo flex transition-all duration-500 sm:group-hover:-translate-y-full">
+            RESUME
+          </span>
+        </motion.span>
+      </span> */}
     </div>
   );
 }

@@ -2,6 +2,7 @@
 
 import { useDimension } from '@/hooks/use-dimension';
 import { cn } from '@/lib/utils';
+import LinkToAction from '@/motion-components/link-to-action';
 import ScrambleText from '@/motion-components/scramble-text';
 import StaggerText from '@/motion-components/stagger-text';
 import { MotionValue, motion, useScroll, useSpring, useTransform } from 'motion/react';
@@ -47,7 +48,7 @@ export default function About() {
       style={{ scale }}
       id="about"
     >
-      <div className="relative flex items-start justify-between gap-16">
+      <div className="relative z-30 flex items-start justify-between gap-16">
         <div className="sticky top-8 h-dvh min-w-fit">
           <div className="flex flex-col items-start justify-start gap-24">
             <div ref={scaleRef}>
@@ -99,6 +100,28 @@ export default function About() {
                   I’m always open to new opportunities, collaborations, and challenges that inspire
                   creativity and drive progress. Let’s build something amazing together!
                 </p>
+                <p className="flex items-center gap-4 pt-8">
+                  <LinkToAction
+                    href="https://www.google.com"
+                    label="LINKEDIN"
+                    className="px-4 py-2 text-sm"
+                  />
+                  <LinkToAction
+                    href="https://www.google.com"
+                    label="GITHUB"
+                    className="px-4 py-2 text-sm"
+                  />
+                  <LinkToAction
+                    href="https://www.google.com"
+                    label="INSTAGRAM"
+                    className="px-4 py-2 text-sm"
+                  />
+                  <LinkToAction
+                    href="https://www.google.com"
+                    label="GMAIL"
+                    className="px-4 py-2 text-sm"
+                  />
+                </p>
               </motion.div>
             </div>
           </div>
@@ -131,9 +154,9 @@ export default function About() {
             y={y2}
           />
           {/* top gradient on pics */}
-          <div className="absolute -top-48 right-0 z-10 h-96 w-96 rounded-full bg-accent blur-[200px]" />
+          <div className="absolute -top-48 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[200px]" />
           {/* bottom gradient on pics */}
-          <div className="absolute bottom-0 right-0 z-10 h-96 w-96 rounded-full bg-accent blur-[250px]" />
+          <div className="absolute bottom-0 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[250px]" />
         </div>
       </div>
       {/* <div className="bg-accent absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-[50%] rounded-full blur-[200px]" /> */}

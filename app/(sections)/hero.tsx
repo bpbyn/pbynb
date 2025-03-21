@@ -1,6 +1,6 @@
 'use client';
 
-import Button from '@/components/button';
+import LinkToAction from '@/motion-components/link-to-action';
 import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 import TiltCard from '@/motion-components/tilt-card';
@@ -32,7 +32,11 @@ export default function Hero() {
   });
 
   return (
-    <motion.section className="relative h-screen px-16 pb-8" style={{ opacity, y, scale }}>
+    <motion.section
+      className="relative h-screen px-16 pb-8"
+      style={{ opacity, y, scale }}
+      id="hero"
+    >
       {/* gradients */}
       <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
       <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" />
@@ -52,9 +56,14 @@ export default function Hero() {
               <MaskText key={i}>{l}&nbsp;</MaskText>
             ))}
           </div>
-          <Button className="bg-foreground px-6 py-3 text-black">
-            <h3 className="font-mono font-medium">SAY HELLO</h3>
-          </Button>
+          {/* <Button className="bg-slate-500/35 px-8 py-4 text-foreground rounded-full shadow-sm">
+            <h3 className="font-mono">SAY HELLO</h3>
+          </Button> */}
+          <LinkToAction
+            href="https://www.google.com"
+            label="SAY HELLO"
+            className="text-md font-medium"
+          />
           <span className="w-full text-left font-mono text-lg font-light text-muted">
             © 2025 BULACAN, PH
           </span>
@@ -63,10 +72,10 @@ export default function Hero() {
           <div />
           <motion.div
             className="relative grid h-full w-full cursor-pointer place-content-start"
-            initial={{ opacity: 0, y: 800 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
-              duration: 2,
+              duration: 3.5,
               ease: [0.76, 0, 0.1, 1],
             }}
           >

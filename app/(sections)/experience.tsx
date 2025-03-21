@@ -1,6 +1,7 @@
 'use client';
 
 import { Icons } from '@/components/icons';
+import LinkToAction from '@/motion-components/link-to-action';
 import ScrambleText from '@/motion-components/scramble-text';
 import StaggerText from '@/motion-components/stagger-text';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
@@ -71,7 +72,7 @@ export default function Experience() {
           <span className="font-mono text-xl font-light text-muted">
             <ScrambleText className="px-0">{`// WHERE I'VE BEEN?`}</ScrambleText>
           </span>
-          <h3 className="max-w-md text-8xl">
+          <h3 className="max-w-xl text-8xl">
             <StaggerText stagger={true} quick={true}>
               Professional
             </StaggerText>
@@ -100,29 +101,25 @@ export default function Experience() {
 
       <span className="inline">
         <motion.div className="fixed right-20 top-24 z-20 w-full">
-          <div className="flex items-center justify-end gap-4">
-            <motion.div style={{ scale: scaleExit }}>
-              <motion.div
-                className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-slate-500/35 px-8 py-4 font-mono text-lg"
-                style={{ scale }}
-              >
-                <span className="group-hover:scale-125">RESUME</span>
+          <div className="flex items-center justify-end">
+            <div className="group flex cursor-pointer gap-4">
+              <motion.div style={{ scale: scaleExit }}>
+                <LinkToAction style={{ scale }} href="https://www.google.com" label="RESUME" />
               </motion.div>
-            </motion.div>
-            <motion.div style={{ scale: scaleExit }}>
-              <motion.div className="relative" style={{ scale }}>
-                <div className="group">
+              <motion.div style={{ scale: scaleExit }}>
+                <motion.div className="relative" style={{ scale }}>
+                  {/* <div className="group">
                   <figure className="relative overflow-hidden">
-                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ease-in-out group-hover:-translate-y-[-100px]">
-                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
+                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:-translate-y-full">
+                      <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
                     </span>
                     <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[-100px] transition-all duration-1000 ease-in-out group-hover:-translate-y-1/2">
                       <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
                     </span>
                     <svg
                       id="progress"
-                      width="100"
-                      height="100"
+                      width="90"
+                      height="90"
                       viewBox="0 0 100 100"
                       className="-rotate-90"
                     >
@@ -131,7 +128,7 @@ export default function Experience() {
                         cy="50"
                         r="30"
                         pathLength="1"
-                        className="fill-transparent stroke-white"
+                        className="fill-transparent stroke-slate-500/35 stroke-[0.3rem]"
                       />
                       <motion.circle
                         cx="50"
@@ -143,9 +140,94 @@ export default function Experience() {
                       />
                     </svg>
                   </figure>
-                </div>
+                </div> */}
+                  <a
+                    className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
+                    onClick={() => {
+                      //   const targetElement = document.getElementById('hero');
+                      //   if (targetElement) {
+                      //     const rect = targetElement.getBoundingClientRect();
+                      //     const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                      //     const targetPosition = rect.top + scrollTop;
+                      //   }
+                      // lenis?.scrollTo('hero');
+                    }}
+                  >
+                    {/* <figure className="absolute translate-y-[300%] overflow-hidden transition-all duration-500 ease-in-out group-hover:translate-y-0">
+                    <svg id="progress" width="90" height="90" viewBox="0 0 100 100" className="">
+                      <circle cx="50" cy="50" r="30" pathLength="1" className="fill-accent" />
+                    </svg>
+                    <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2">
+                      <Icons.arrow45deg className="h-6 w-6 transition-all duration-1000 ease-in-out group-hover:rotate-[315deg]" />
+                    </span>
+                  </figure> */}
+                    {/* <figure className="relative overflow-hidden">
+                    <svg
+                      id="progress"
+                      width="90"
+                      height="90"
+                      viewBox="0 0 100 100"
+                      className="-rotate-90"
+                    >
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="30"
+                        pathLength="1"
+                        className="relative overflow-hidden fill-transparent stroke-slate-500/35 stroke-[0.3rem]"
+                      />
+                      <motion.circle
+                        cx="50"
+                        cy="50"
+                        r="30"
+                        pathLength="1"
+                        className="fill-none stroke-accent stroke-[0.3rem]"
+                        style={{ pathLength: scaleButton }}
+                      />
+                    </svg>
+                    <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:-translate-y-[300%]">
+                      <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
+                    </span>
+                  </figure> */}
+                    <figure className="relative overflow-hidden">
+                      <svg
+                        id="progress"
+                        width="60"
+                        height="60"
+                        viewBox="0 0 60 60"
+                        className="relative -rotate-90 overflow-hidden"
+                      >
+                        <motion.circle
+                          cx="30"
+                          cy="30"
+                          r="27.5"
+                          pathLength="1"
+                          className="ease-expo absolute -translate-x-full fill-accent stroke-slate-500 stroke-[0.2rem] transition-transform duration-500 group-hover:translate-x-0"
+                          style={{ pathLength: scaleButton }}
+                        />
+                        <motion.circle
+                          cx="30"
+                          cy="30"
+                          r="27.5"
+                          pathLength="1"
+                          className="ease-expo translate-x-0 fill-slate-500/35 stroke-accent stroke-[0.2rem] transition-transform duration-500 group-hover:-translate-x-full"
+                          style={{ pathLength: scaleButton }}
+                        />
+                        {/* <span className="ease-expo relative bg-red-500"> */}
+
+                        {/* </span> */}
+                      </svg>
+                      <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-translate-y-[300%]">
+                        <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
+                      </span>
+                      <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 translate-y-[300%] duration-500 group-hover:-translate-y-1/2">
+                        <Icons.arrow45deg className="ease-expo h-6 w-6 -rotate-45 transition-all duration-500 group-hover:-rotate-[225deg]" />
+                      </span>
+                    </figure>
+                  </a>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
         {companies.map((c, i) => (

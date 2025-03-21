@@ -14,14 +14,14 @@ export const Icons = {
         <path
           d="M2.91666 32.083L32.0833 2.91634"
           stroke="#EFEFEF"
-          strokeWidth="2"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M2.91666 2.91634H32.0833V32.083"
           stroke="#EFEFEF"
-          strokeWidth="2"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
