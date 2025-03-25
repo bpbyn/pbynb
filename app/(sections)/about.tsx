@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <motion.section
-      className="relative min-h-screen rounded-t-3xl bg-background_second px-16 py-8"
+      className="relative min-h-screen rounded-t-3xl bg-background_second px-16 py-8 xl:px-36"
       ref={section}
       style={{ scale }}
       id="about"

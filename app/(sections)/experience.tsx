@@ -63,7 +63,7 @@ export default function Experience() {
 
   return (
     <section
-      className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh]"
+      className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh] xl:px-36"
       id="experience"
       ref={buttonProgressRef}
     >
@@ -100,7 +100,7 @@ export default function Experience() {
       </div>
 
       <span className="inline">
-        <motion.div className="fixed right-20 top-24 z-20 w-full">
+        <motion.div className="fixed right-20 top-24 z-20 w-full xl:right-36">
           <div className="flex items-center justify-end">
             <div className="group flex cursor-pointer gap-4">
               <motion.div style={{ scale: scaleExit }}>
@@ -141,18 +141,7 @@ export default function Experience() {
                     </svg>
                   </figure>
                 </div> */}
-                  <a
-                    className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
-                    onClick={() => {
-                      //   const targetElement = document.getElementById('hero');
-                      //   if (targetElement) {
-                      //     const rect = targetElement.getBoundingClientRect();
-                      //     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-                      //     const targetPosition = rect.top + scrollTop;
-                      //   }
-                      // lenis?.scrollTo('hero');
-                    }}
-                  >
+                  <a className="tracking-base group pointer-events-auto relative transform-none overflow-hidden">
                     {/* <figure className="absolute translate-y-[300%] overflow-hidden transition-all duration-500 ease-in-out group-hover:translate-y-0">
                     <svg id="progress" width="90" height="90" viewBox="0 0 100 100" className="">
                       <circle cx="50" cy="50" r="30" pathLength="1" className="fill-accent" />
@@ -189,7 +178,7 @@ export default function Experience() {
                       <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
                     </span>
                   </figure> */}
-                    <figure className="relative overflow-hidden">
+                    {/* <figure className="relative overflow-hidden">
                       <svg
                         id="progress"
                         width="60"
@@ -213,9 +202,6 @@ export default function Experience() {
                           className="ease-expo translate-x-0 fill-slate-500/35 stroke-accent stroke-[0.2rem] transition-transform duration-500 group-hover:-translate-x-full"
                           style={{ pathLength: scaleButton }}
                         />
-                        {/* <span className="ease-expo relative bg-red-500"> */}
-
-                        {/* </span> */}
                       </svg>
                       <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-translate-y-[300%]">
                         <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
@@ -223,7 +209,40 @@ export default function Experience() {
                       <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 translate-y-[300%] duration-500 group-hover:-translate-y-1/2">
                         <Icons.arrow45deg className="ease-expo h-6 w-6 -rotate-45 transition-all duration-500 group-hover:-rotate-[225deg]" />
                       </span>
-                    </figure>
+                    </figure> */}
+                    <span className="group relative flex size-16 items-center justify-center overflow-hidden rounded-full bg-slate-500/35">
+                      <span className="absolute size-16 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0"></span>
+                      <svg
+                        id="progress"
+                        width="70"
+                        height="70"
+                        viewBox="0 0 70 70"
+                        className="relative -rotate-90 overflow-hidden"
+                      >
+                        <motion.circle
+                          cx="35"
+                          cy="35"
+                          r="32.5"
+                          pathLength="1"
+                          className="ease-expo absolute -translate-x-full fill-transparent stroke-slate-500 stroke-[0.2rem] transition-transform duration-500 group-hover:translate-x-0"
+                          style={{ pathLength: scaleButton }}
+                        />
+                        <motion.circle
+                          cx="35"
+                          cy="35"
+                          r="32.5"
+                          pathLength="1"
+                          className="ease-expo translate-x-0 fill-transparent stroke-accent stroke-[0.2rem] transition-transform duration-500 group-hover:-translate-x-full"
+                          style={{ pathLength: scaleButton }}
+                        />
+                      </svg>
+                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:-translate-y-[300%]">
+                        <Icons.arrow45deg className="h-5 w-5 -rotate-45" />
+                      </span>
+                      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[300%] rotate-180 transition-all duration-500 ease-in-out group-hover:-translate-y-1/2 group-hover:rotate-0">
+                        <Icons.arrow45deg className="h-5 w-5 -rotate-45 transition-all duration-500 ease-in-out group-hover:-rotate-[225deg]" />
+                      </span>
+                    </span>
                   </a>
                 </motion.div>
               </motion.div>

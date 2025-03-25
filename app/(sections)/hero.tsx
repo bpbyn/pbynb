@@ -33,9 +33,9 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative h-screen px-16 pb-8"
+      className="relative h-screen px-16 pb-8 xl:px-36"
       style={{ opacity, y, scale }}
-      id="hero"
+      id="home"
     >
       {/* gradients */}
       <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
@@ -64,14 +64,34 @@ export default function Hero() {
             label="SAY HELLO"
             className="text-md font-medium"
           />
+
+          {/* <a
+            className="bg-secondary-300 tracking-base text-accent-200 border-secondary-100 px-space-sm py-space-2xs text-base-small group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full border font-medium uppercase"
+            target="_blank"
+            href="https://www.instagram.com/by_huy/"
+          >
+            <span className="absolute inset-0 z-10 block overflow-hidden">
+              <span className="ease-expo block h-full w-full translate-y-full rounded-t-[15rem] bg-blue-300 text-red-100 transition-all duration-500 sm:group-hover:translate-y-0 sm:group-hover:rounded-none"></span>
+            </span>
+            <span className="relative z-20 block overflow-hidden transition-all">
+              <span
+                data-after="Instagram"
+                className="after:ease-expo block after:absolute after:left-0 after:block after:translate-y-0 after:transition-all after:duration-500 after:content-[attr(data-after)] sm:group-hover:after:-translate-y-[100%]"
+              >
+                <span className="ease-expo flex transition-all duration-500 sm:group-hover:-translate-y-full">
+                  Instagram
+                </span>
+              </span>
+            </span>
+          </a> */}
           <span className="w-full text-left font-mono text-lg font-light text-muted">
             © 2025 BULACAN, PH
           </span>
         </div>
-        <div className="grid h-full place-content-end gap-32">
-          <div />
+        <div className="grid h-full place-content-end gap-28">
+          {/* <div /> */}
           <motion.div
-            className="relative grid h-full w-full cursor-pointer place-content-start"
+            className="relative grid h-full cursor-pointer justify-self-end pr-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
@@ -101,7 +121,7 @@ export default function Hero() {
           </motion.div>
           <div className="relative h-full text-8xl tracking-tight text-foreground">
             <StaggerText className="font-serif text-8xl">front-end</StaggerText>
-            <StaggerText className="font-serif text-8xl">developer</StaggerText>
+            <StaggerText className="pb-4 pr-2 font-serif text-8xl">developer</StaggerText>
           </div>
           <span className="w-full text-right font-mono text-lg font-light text-muted">
             ( SCROLL TO EXPLORE )

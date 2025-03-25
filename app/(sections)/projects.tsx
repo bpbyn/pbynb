@@ -69,7 +69,7 @@ export default function Projects() {
 
   return (
     <motion.section
-      className="relative z-10 min-h-screen rounded-b-3xl bg-background_second px-16 py-8 pt-16"
+      className="relative z-10 min-h-screen rounded-b-3xl bg-background_second px-16 py-8 pt-16 xl:px-36"
       id="projects"
       style={{ scale }}
     >

@@ -41,13 +41,13 @@ export default function LinkToAction({
       }}
     >
       <span className="absolute inset-0 z-10 block overflow-hidden">
-        <span className="ease-expo block h-full w-full translate-y-full rounded-t-[15rem] bg-accent transition-all duration-500 sm:group-hover:translate-y-0 sm:group-hover:rounded-none" />
+        <span className="block h-full w-full translate-y-full rounded-t-[15rem] bg-accent transition-all duration-500 ease-in-out sm:group-hover:translate-y-0 sm:group-hover:rounded-none"></span>
       </span>
       <span className="relative z-20 block overflow-hidden transition-all">
-        <span className="ease-expo flex transition-all duration-500 sm:group-hover:-translate-y-full">
+        <span className="flex transition-all duration-500 ease-in-out sm:group-hover:-translate-y-full">
           {label}
         </span>
-        <span className="ease-expo absolute left-0 translate-y-0 transition-all duration-500 group-hover:-translate-y-full">
+        <span className="absolute left-0 translate-y-0 transition-all duration-500 ease-in-out group-hover:-translate-y-full">
           <ScrambleText className="p-0" overrideHover={overrideHover}>
             {labelBelow ?? label}
           </ScrambleText>
