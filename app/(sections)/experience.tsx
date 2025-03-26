@@ -61,6 +61,149 @@ export default function Experience() {
     'reed elsevier philippines',
   ];
 
+  const experience = [
+    {
+      company: 'ing',
+      duration: 'Present',
+      role: 'Engineer III',
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
+                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
+                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
+                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
+                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
+                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
+                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+      techUsed: [
+        'Lit',
+        'Javascript',
+        'Typescript',
+        'Java',
+        'Spring Boot',
+        'Azure',
+        'Storybook',
+        'Splunk',
+        'Adobe Analytics',
+      ],
+    },
+    {
+      company: 'asurion',
+      duration: '2021 - 2024',
+      role: 'Software Engineer II',
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
+                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
+                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
+                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
+                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
+                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
+                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+      techUsed: [
+        'React',
+        'Typescript',
+        'AWS',
+        'GraphQL',
+        'WebSockets',
+        'Twilio',
+        'Contentful',
+        'Storybook',
+        'React Query',
+        'Redux',
+        'Chakra UI',
+        'TailwindCSS',
+        'Styled Components',
+        'Material UI',
+        'Ant Design',
+        'Recharts',
+        'Node',
+        'Java',
+        'JAX RS',
+        'DynamoDB',
+        'PosgreSQL',
+        'Vite',
+        'Playwright',
+        'Mixpanel',
+        'Fullstory',
+        'Jenkins',
+        'Github Actions',
+      ],
+    },
+    {
+      company: 'dxc technology',
+      duration: '2019 - 2021',
+      role: 'Technology Consultant II',
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
+                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
+                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
+                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
+                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
+                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
+                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+      techUsed: [
+        'Angular',
+        'React',
+        'Typescript',
+        'Javascript',
+        'HTML',
+        'CSS',
+        'ChartJS',
+        'Python',
+        'Django',
+        'C#',
+        'Spring Boot',
+        'Kafka',
+        'Jenkins',
+        'SonarQube',
+        'Azure',
+        'PostgreSQL',
+      ],
+    },
+    {
+      company: 'willis towers watson',
+      duration: '2018 - 2019',
+      role: 'Software Developer',
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
+                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
+                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
+                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
+                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
+                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
+                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+      techUsed: ['Python', 'Unix'],
+    },
+    {
+      company: 'reed elsevier philippines',
+      duration: '2015 - 2017',
+      role: 'Programmer',
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
+                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
+                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
+                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
+                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
+                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
+                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+      techUsed: ['Pascal Delphi'],
+    },
+  ];
+
   return (
     <section
       className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh] xl:px-36"
@@ -100,7 +243,10 @@ export default function Experience() {
       </div>
 
       <span className="inline">
-        <motion.div className="fixed right-20 top-24 z-20 w-full xl:right-36">
+        <motion.div
+          className="fixed right-20 top-24 z-20 w-full xl:right-36"
+          style={{ scaleY: scaleExit }}
+        >
           <div className="flex items-center justify-end">
             <div className="group flex cursor-pointer gap-4">
               <motion.div style={{ scale: scaleExit }}>
@@ -108,108 +254,10 @@ export default function Experience() {
               </motion.div>
               <motion.div style={{ scale: scaleExit }}>
                 <motion.div className="relative" style={{ scale }}>
-                  {/* <div className="group">
-                  <figure className="relative overflow-hidden">
-                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:-translate-y-full">
-                      <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
-                    </span>
-                    <span className="ease-expo absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[-100px] transition-all duration-1000 ease-in-out group-hover:-translate-y-1/2">
-                      <Icons.arrow45deg className="h-7 w-7 -rotate-45" />
-                    </span>
-                    <svg
-                      id="progress"
-                      width="90"
-                      height="90"
-                      viewBox="0 0 100 100"
-                      className="-rotate-90"
-                    >
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r="30"
-                        pathLength="1"
-                        className="fill-transparent stroke-slate-500/35 stroke-[0.3rem]"
-                      />
-                      <motion.circle
-                        cx="50"
-                        cy="50"
-                        r="30"
-                        pathLength="1"
-                        className="fill-none stroke-accent stroke-[0.2rem]"
-                        style={{ pathLength: scaleButton }}
-                      />
-                    </svg>
-                  </figure>
-                </div> */}
-                  <a className="tracking-base group pointer-events-auto relative transform-none overflow-hidden">
-                    {/* <figure className="absolute translate-y-[300%] overflow-hidden transition-all duration-500 ease-in-out group-hover:translate-y-0">
-                    <svg id="progress" width="90" height="90" viewBox="0 0 100 100" className="">
-                      <circle cx="50" cy="50" r="30" pathLength="1" className="fill-accent" />
-                    </svg>
-                    <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2">
-                      <Icons.arrow45deg className="h-6 w-6 transition-all duration-1000 ease-in-out group-hover:rotate-[315deg]" />
-                    </span>
-                  </figure> */}
-                    {/* <figure className="relative overflow-hidden">
-                    <svg
-                      id="progress"
-                      width="90"
-                      height="90"
-                      viewBox="0 0 100 100"
-                      className="-rotate-90"
-                    >
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r="30"
-                        pathLength="1"
-                        className="relative overflow-hidden fill-transparent stroke-slate-500/35 stroke-[0.3rem]"
-                      />
-                      <motion.circle
-                        cx="50"
-                        cy="50"
-                        r="30"
-                        pathLength="1"
-                        className="fill-none stroke-accent stroke-[0.3rem]"
-                        style={{ pathLength: scaleButton }}
-                      />
-                    </svg>
-                    <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out group-hover:-translate-y-[300%]">
-                      <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
-                    </span>
-                  </figure> */}
-                    {/* <figure className="relative overflow-hidden">
-                      <svg
-                        id="progress"
-                        width="60"
-                        height="60"
-                        viewBox="0 0 60 60"
-                        className="relative -rotate-90 overflow-hidden"
-                      >
-                        <motion.circle
-                          cx="30"
-                          cy="30"
-                          r="27.5"
-                          pathLength="1"
-                          className="ease-expo absolute -translate-x-full fill-accent stroke-slate-500 stroke-[0.2rem] transition-transform duration-500 group-hover:translate-x-0"
-                          style={{ pathLength: scaleButton }}
-                        />
-                        <motion.circle
-                          cx="30"
-                          cy="30"
-                          r="27.5"
-                          pathLength="1"
-                          className="ease-expo translate-x-0 fill-slate-500/35 stroke-accent stroke-[0.2rem] transition-transform duration-500 group-hover:-translate-x-full"
-                          style={{ pathLength: scaleButton }}
-                        />
-                      </svg>
-                      <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2 duration-500 group-hover:-translate-y-[300%]">
-                        <Icons.arrow45deg className="h-6 w-6 -rotate-45" />
-                      </span>
-                      <span className="ease-expo absolute left-1/2 top-1/2 z-0 -translate-x-1/2 translate-y-[300%] duration-500 group-hover:-translate-y-1/2">
-                        <Icons.arrow45deg className="ease-expo h-6 w-6 -rotate-45 transition-all duration-500 group-hover:-rotate-[225deg]" />
-                      </span>
-                    </figure> */}
+                  <a
+                    className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
+                    href="https://www.google.com"
+                  >
                     <span className="group relative flex size-16 items-center justify-center overflow-hidden rounded-full bg-slate-500/35">
                       <span className="absolute size-16 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0"></span>
                       <svg
@@ -249,27 +297,34 @@ export default function Experience() {
             </div>
           </div>
         </motion.div>
-        {companies.map((c, i) => (
-          <div className="sticky top-0 h-[100svh]" key={`company-${c}-${i}`}>
+        {experience.map((e, i) => (
+          <div className="sticky top-0 h-[100svh]" key={`company-${e}-${i}`}>
             <div
               className="relative border-t border-t-muted bg-background_second p-8"
               style={{
                 top: `calc(20vh + ${5.75 * i}em)`,
-                marginBottom: `${5.75 * (companies.length - i)}em`,
+                marginBottom: `${5.75 * (experience.length - i)}em`,
               }}
             >
               <div className="flex justify-between">
-                <span className="text-4xl font-semibold">{companies[i]}</span>
-                <span className="text-xl font-light">2024 - Present</span>
+                <span className="text-4xl font-semibold">{e.company}</span>
+                <span className="text-xl font-light text-muted">{e.duration}</span>
               </div>
-              <div className="flex items-center justify-between py-8">
-                <span>Web Engineer</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                  illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                  veritatis consequatur ullam sit totam amet numquam.
-                </p>
-                <span>Javscript</span>
+              <div className="grid h-full grid-cols-[auto_1fr] place-content-between gap-24 py-8">
+                <span className="w-60 text-lg font-medium text-muted">{e.role}</span>
+                <div className="space-y-8">
+                  <p>{e.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {e.techUsed.map((t, i) => (
+                      <span
+                        className="h-fit w-fit whitespace-nowrap text-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-xs"
+                        key={`tech-${i}`}
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -278,7 +333,7 @@ export default function Experience() {
 
       <div className="sticky top-0 h-[100svh]" ref={exitAnimationRef}>
         <div
-          className="relative border-t border-t-muted bg-background_second p-8"
+          className="relative bg-background_second p-8"
           style={{
             top: `calc(8vh + ${5.75 * companies.length}em)`,
             marginBottom: '0em',
@@ -287,7 +342,7 @@ export default function Experience() {
       </div>
 
       <div className="absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[300px]" />
-      <div className="absolute right-0 top-0 z-10 h-1/2 w-1/2 bg-accent blur-[400px]" />
+      <div className="absolute right-0 top-0 z-10 h-1/6 w-1/2 bg-accent blur-[400px]" />
     </section>
   );
 }

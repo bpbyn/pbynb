@@ -165,7 +165,7 @@ export default function Projects() {
                     <div className="flex h-full flex-wrap items-center gap-2">
                       {w.techUsed.map((t, i) => (
                         <span
-                          className="rounded-full border border-muted px-4 py-1 text-xs"
+                          className="whitespace-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-xs"
                           key={`tech-${i}`}
                         >
                           {t}

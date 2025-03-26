@@ -45,7 +45,7 @@ export default function Contact() {
                   </StaggerText>
                 </h3>
               </div>
-              <LinkToAction label="LET'S CONNECT" />
+              <LinkToAction label="LET'S TALK" />
               <div />
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">
