@@ -25,7 +25,7 @@ export default function LinkToAction({
   return (
     <motion.a
       className={cn(
-        'tracking-base group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full bg-slate-500/35 px-8 py-4 font-mono text-lg',
+        'tracking-base group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full bg-slate-500/35 p-8 py-4 font-mono text-base',
         className
       )}
       target={target ?? '_blank'}

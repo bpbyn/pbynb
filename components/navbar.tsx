@@ -59,7 +59,6 @@ const entrance = {
 
 export default function Navbar() {
   const { onNavClick } = useNavLenis();
-  // const lenis = useLenis();
   const container = useRef<HTMLDivElement>(null);
   const [scrollVal, setScrollVal] = useState<number>(0);
   const { scrollY } = useScroll();
@@ -75,11 +74,19 @@ export default function Navbar() {
       {...anim(scroll(scrollVal))}
     >
       <motion.div
-        className="flex items-center justify-between px-16 py-8 xl:px-36"
+        className="flex items-start justify-between px-8 py-8 lg:items-center lg:px-16 xl:px-36"
         {...anim(entrance)}
       >
-        <motion.h3 className="text-3xl">bpbyn.</motion.h3>
-        <nav className="flex items-center justify-evenly gap-8 font-mono text-lg font-medium text-muted">
+        <div className="grid gap-2">
+          <motion.h3 className="text-base-xl leading-none">bpbyn.</motion.h3>
+          {/* <span>
+            <span className="text-mono font-mono leading-none text-muted">BULACAN, PH ©</span>
+            <span className="text-mono font-mono leading-none text-muted">
+              14.7824°N, 120.9621°E
+            </span>
+          </span> */}
+        </div>
+        <nav className="flex flex-col items-end gap-1 font-mono text-base-xs font-medium text-muted lg:flex-row lg:items-center lg:justify-evenly lg:gap-8 lg:text-base">
           {navigation.slice(1, 5).map((nav, i) => (
             <a
               href={nav.id}
@@ -88,7 +95,7 @@ export default function Navbar() {
               id={nav.id}
               className="hover:text-foreground"
             >
-              <ScrambleText>{nav.title}</ScrambleText>
+              <ScrambleText className="p-0">{nav.title}</ScrambleText>
             </a>
           ))}
         </nav>

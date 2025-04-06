@@ -120,12 +120,11 @@ export default function Experience() {
         'Styled Components',
         'Material UI',
         'Ant Design',
-        'Recharts',
         'Node',
         'Java',
         'JAX RS',
         'DynamoDB',
-        'PosgreSQL',
+        'PostgreSQL',
         'Vite',
         'Playwright',
         'Mixpanel',
@@ -194,28 +193,26 @@ export default function Experience() {
                     veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
                     consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
                     doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
-                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
-                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
-                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur`,
       techUsed: ['Pascal Delphi'],
     },
   ];
 
   return (
     <section
-      className="relative min-h-screen bg-background_second px-16 py-8 md:mb-[-100svh] xl:px-36"
+      className="relative min-h-screen bg-background_second px-8 py-8 md:mb-[-100svh] lg:px-16 xl:px-36"
       id="experience"
       ref={buttonProgressRef}
     >
-      <div className="relative z-20 flex items-end justify-between" ref={scaleRef}>
+      <div
+        className="relative z-20 flex flex-col gap-16 md:flex-row md:items-end md:justify-between"
+        ref={scaleRef}
+      >
         <div>
-          <span className="font-mono text-xl font-light text-muted">
+          <span className="font-mono text-base font-light text-muted lg:text-base-md">
             <ScrambleText className="px-0">{`// WHERE I'VE BEEN?`}</ScrambleText>
           </span>
-          <h3 className="max-w-xl text-8xl">
+          <h3 className="text-base-5xl leading-[3rem] tracking-tighter md:max-w-lg md:tracking-tight lg:text-base-6xl lg:leading-[6rem]">
             <StaggerText stagger={true} quick={true}>
               Professional
             </StaggerText>
@@ -225,9 +222,9 @@ export default function Experience() {
           </h3>
         </div>
         <div className="flex justify-between gap-8">
-          <div className="min-w-fit font-mono text-lg font-light text-muted">(EXPERIENCE)</div>
+          <div className="min-w-fit font-mono text-base font-light text-muted">(EXPERIENCE)</div>
           <motion.div
-            className="max-w-sm"
+            className="max-w-sm text-base-xs"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -244,7 +241,7 @@ export default function Experience() {
 
       <span className="inline">
         <motion.div
-          className="fixed right-20 top-24 z-20 w-full xl:right-36"
+          className="fixed right-8 top-12 z-20 w-full md:top-24 lg:right-20 xl:right-36"
           style={{ scaleY: scaleExit }}
         >
           <div className="flex items-center justify-end">
@@ -258,8 +255,8 @@ export default function Experience() {
                     className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
                     href="https://www.google.com"
                   >
-                    <span className="group relative flex size-16 items-center justify-center overflow-hidden rounded-full bg-slate-500/35">
-                      <span className="absolute size-16 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0"></span>
+                    <span className="group relative flex size-14 items-center justify-center overflow-hidden rounded-full bg-slate-500/35 lg:size-16">
+                      <span className="absolute size-14 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0 lg:size-16"></span>
                       <svg
                         id="progress"
                         width="70"
@@ -300,24 +297,28 @@ export default function Experience() {
         {experience.map((e, i) => (
           <div className="sticky top-0 h-[100svh]" key={`company-${e}-${i}`}>
             <div
-              className="relative border-t border-t-muted bg-background_second p-8"
+              className="relative border-t border-t-muted bg-background_second px-0 py-10 sm:py-8 md:pt-6 lg:p-8"
               style={{
                 top: `calc(20vh + ${5.75 * i}em)`,
                 marginBottom: `${5.75 * (experience.length - i)}em`,
               }}
             >
-              <div className="flex justify-between">
-                <span className="text-4xl font-semibold">{e.company}</span>
-                <span className="text-xl font-light text-muted">{e.duration}</span>
+              <div className="flex items-center justify-between leading-tight">
+                <span className="text-base-lg font-semibold sm:text-base-xl md:text-base-2xl">
+                  {e.company}
+                </span>
+                <span className="whitespace-nowrap text-base font-light text-muted lg:text-base-md">
+                  {e.duration}
+                </span>
               </div>
-              <div className="grid h-full grid-cols-[auto_1fr] place-content-between gap-24 py-8">
+              <div className="grid h-full grid-cols-1 gap-4 py-8 md:grid-cols-[auto_1fr]">
                 <span className="w-60 text-lg font-medium text-muted">{e.role}</span>
-                <div className="space-y-8">
-                  <p>{e.description}</p>
+                <div className="space-y-4 lg:space-y-8">
+                  <p className="text-mono md:text-base-xs">{e.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {e.techUsed.map((t, i) => (
                       <span
-                        className="h-fit w-fit whitespace-nowrap text-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-xs"
+                        className="whitespace-nowrap text-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-mono"
                         key={`tech-${i}`}
                       >
                         {t}
@@ -330,10 +331,9 @@ export default function Experience() {
           </div>
         ))}
       </span>
-
-      <div className="sticky top-0 h-[100svh]" ref={exitAnimationRef}>
+      <div className="sticky top-0 h-0 sm:h-[100svh]" ref={exitAnimationRef}>
         <div
-          className="relative bg-background_second p-8"
+          className="relative p-8"
           style={{
             top: `calc(8vh + ${5.75 * companies.length}em)`,
             marginBottom: '0em',
@@ -341,7 +341,7 @@ export default function Experience() {
         ></div>
       </div>
 
-      <div className="absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[300px]" />
+      <div className="absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent blur-[300px]" />
       <div className="absolute right-0 top-0 z-10 h-1/6 w-1/2 bg-accent blur-[400px]" />
     </section>
   );

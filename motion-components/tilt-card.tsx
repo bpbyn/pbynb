@@ -49,7 +49,7 @@ export default function TiltCard({
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`relative aspect-[4/3] w-full rounded-3xl sm:aspect-square md:aspect-[4/3] ${className}`}
+      className={`relative aspect-[4/3] h-fit w-full rounded-3xl md:aspect-[4/3] ${className}`}
       style={{
         transformStyle: 'preserve-3d',
         transform,

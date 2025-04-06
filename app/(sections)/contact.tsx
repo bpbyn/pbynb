@@ -15,19 +15,20 @@ export default function Contact() {
   const { onNavClick } = useNavLenis();
 
   return (
-    <div className="mt-[-100svh]">
+    <div className="mt-[-100svh] overflow-hidden">
       <div className="relative h-svh" />
       <div className="sticky bottom-0 z-0">
-        <section className="relative flex h-screen flex-col overflow-x-clip" id="contact">
+        <section className="relative flex h-screen flex-col" id="contact">
           {/* <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[350px]" /> */}
           {/* <div className="absolute h-1/2 w-full translate-y-[50%] bg-accent blur-[350px]" /> */}
-          <div className="relative grid h-full grid-cols-2 gap-52 px-16 py-8 xl:px-36">
+          <div className="relative grid h-full grid-cols-1 px-8 py-8 md:grid-cols-2 lg:px-16 xl:gap-52 xl:px-36">
             <div className="grid place-content-between pt-16">
-              <div>
-                <span className="font-mono text-xl font-light text-muted">
+              <div className="w-full">
+                <span className="font-mono text-base font-light text-muted lg:text-base-md">
                   <ScrambleText className="px-0">{`// WHAT ARE YOU WAITING FOR?`}</ScrambleText>
                 </span>
-                <h3 className="grid max-w-md gap-1 text-8xl">
+                {/* <h3 className="text-base-5xl leading-[3rem] tracking-tight md:max-w-lg lg:text-base-6xl lg:leading-[6rem]"> */}
+                <h3 className="hidden gap-1 overflow-hidden text-base-6xl leading-[6rem] tracking-normal md:grid md:max-w-md">
                   <StaggerText stagger={true} quick={false}>
                     Reach
                   </StaggerText>
@@ -44,13 +45,17 @@ export default function Contact() {
                     it out
                   </StaggerText>
                 </h3>
+                <h3 className="max-w-md text-base-4xl leading-[4rem] tracking-normal sm:text-base-5xl sm:leading-[5rem] md:hidden">
+                  <MaskText>Reach out,</MaskText>
+                  <MaskText>don’t doubt—</MaskText>
+                  <MaskText>let’s figure it out</MaskText>
+                </h3>
               </div>
               <LinkToAction label="LET'S TALK" />
               <div />
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">
-              <div className="flex h-full flex-col justify-center gap-8 font-serif text-5xl">
-                {/* <span className='font-mono text-muted text-lg justify-self-end'>(MENU)</span> */}
+              <div className="flex h-full flex-col justify-center gap-8 font-serif text-base-2xl leading-none sm:text-base-3xl">
                 {navigation.slice(0, 4).map(({ id, title }, i) => (
                   <MaskText key={`shortcut-${i}`} duration={1.9}>
                     <a
@@ -60,29 +65,20 @@ export default function Contact() {
                     >
                       <div className="ease-expo absolute flex w-full translate-y-0 cursor-pointer items-center justify-between overflow-hidden px-4 pb-4 transition-all duration-500 group-hover:-translate-y-full">
                         <span>{title}</span>
-                        <Icons.arrow45deg className="ease-expo h-9 w-9 transition-all duration-500 group-hover:-translate-x-8 group-hover:-rotate-45" />
+                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 group-hover:-translate-x-8 group-hover:-rotate-45" />
                       </div>
                       <div className="ease-expo flex translate-y-full cursor-pointer items-center justify-between px-4 pb-4 transition-all duration-500 group-hover:translate-y-0">
                         <span>{title}</span>
-                        <Icons.arrow45deg className="ease-expo h-9 w-9 transition-all duration-500 group-hover:-rotate-45" />
+                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 group-hover:-rotate-45" />
                       </div>
                     </a>
                   </MaskText>
                 ))}
               </div>
-              <span className="font-light text-muted">
+              <span className="inline max-w-sm text-base-xs font-light text-muted">
                 © 2025 Brian Punongbayan. All rights reserved.
               </span>
-
-              {/* <div className="relative">
-                <div className="group absolute bottom-8 right-0 size-16 overflow-hidden rounded-full border">
-                  <div className="relative">
-                    <span className="ease-cubic absolute size-16 translate-y-full rotate-45 rounded-lg bg-accent transition-all duration-500 group-hover:translate-y-0 group-hover:rounded-full"></span>
-                    
-                  </div>
-                </div>
-              </div> */}
-              <div className="absolute bottom-8 right-16 size-20 overflow-hidden rounded-full xl:right-36">
+              <div className="absolute bottom-8 right-8 hidden size-20 overflow-hidden rounded-full lg:block">
                 <a
                   className="group relative flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-slate-500/35 bg-slate-500/35"
                   onClick={() => onNavClick('#home')}
@@ -104,21 +100,14 @@ export default function Contact() {
             <ParallelText
               baseVelocity={4}
               style={{ background: 'black' }}
-              className="relative py-4 text-white"
+              className="py-0 text-white md:py-4"
             >
               {[...Array(4)].map((_, i) => (
                 <DisplayText key={`displayTxt-${i}`}>
                   <span className="uppercase">Brian Punongbayan</span>
-                  <span className="font-mono text-lg text-muted">&nbsp;[2025]&nbsp;</span>
-                  {/* <div className="flex gap-8">
-                    <span className="uppercase">&nbsp;Brian Punongbayan</span>
-                    <div className="flex flex-col items-center justify-center font-mono text-xs text-muted">
-                      <span>All</span>
-                      <span>Rights</span>
-                      <span>Reserved</span>
-                      <span className="text-sm">[2025]</span>
-                    </div>
-                  </div> */}
+                  <span className="font-mono text-base-md leading-none text-muted">
+                    &nbsp;[2025]&nbsp;
+                  </span>
                 </DisplayText>
               ))}
             </ParallelText>

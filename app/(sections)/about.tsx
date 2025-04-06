@@ -43,19 +43,19 @@ export default function About() {
 
   return (
     <motion.section
-      className="relative min-h-screen rounded-t-3xl bg-background_second px-16 py-8 xl:px-36"
+      className="relative min-h-screen overflow-clip rounded-t-3xl bg-background_second px-8 py-8 pb-8 lg:px-16 xl:px-36"
       ref={section}
       style={{ scale }}
       id="about"
     >
       <div className="relative z-30 flex items-start justify-between gap-16">
-        <div className="sticky top-8 h-dvh min-w-fit">
-          <div className="flex flex-col items-start justify-start gap-24">
+        <div className="sticky top-8 min-w-fit md:h-dvh">
+          <div className="flex flex-col items-start justify-start gap-12 lg:gap-24">
             <div ref={scaleRef}>
-              <span className="font-mono text-xl font-light text-muted">
+              <span className="font-mono text-base font-light text-muted lg:text-base-md">
                 <ScrambleText className="px-0">{`// WHO AM I?`}</ScrambleText>
               </span>
-              <h3 className="max-w-md text-8xl">
+              <h3 className="max-w-md text-base-5xl leading-[3rem] tracking-tight lg:text-base-6xl lg:leading-[6rem]">
                 <StaggerText stagger={true} quick={true}>
                   Meet the
                 </StaggerText>
@@ -64,10 +64,10 @@ export default function About() {
                 </StaggerText>
               </h3>
             </div>
-            <div className="flex h-full gap-8">
-              <div className="min-w-fit font-mono text-lg font-light text-muted">(ABOUT ME)</div>
+            <div className="flex h-full flex-col gap-4 md:flex-row md:gap-8">
+              <div className="min-w-fit font-mono text-base font-light text-muted">(ABOUT ME)</div>
               <motion.div
-                className="max-w-sm space-y-6 xl:max-w-lg"
+                className="grid max-w-sm grid-cols-1 space-y-6 text-base-xs font-light md:max-w-xs lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -76,10 +76,6 @@ export default function About() {
                   duration: 1.5,
                 }}
               >
-                {/* <CharacterScrollText
-                  paragraph={`Hi there! I’m Brian, a developer from the Philippines with a passion for solving problems and building meaningful solutions through technology.\nWhen I’m not coding, I enjoy staying up-to-date with the latest trends and innovations in the tech industry, constantly exploring how emerging technologies can shape the future.\nOutside of work, I wear many hats. I’m a proud “radiohead” and a hands-on dad, often creating fun and unique lullabies to help my little one drift off to sleep. Before parenthood, I was an avid runner who loved pushing his limits. Running remains close to my heart, and I look forward to lacing up my shoes and getting back to it soon.\nI’m always open to new opportunities, collaborations, and challenges that inspire creativity and drive progress. Let’s build something amazing together!`}
-                /> */}
-
                 <p>
                   Hi there! I’m Brian, a developer from the Philippines with a passion for solving
                   problems and building meaningful solutions through technology.
@@ -102,33 +98,33 @@ export default function About() {
                 </p>
                 <p className="flex items-center gap-4 pt-8">
                   <LinkToAction
-                    href="https://www.google.com"
+                    href="https://www.linkedin.com/in/bpunongbayan30/"
                     label="LINKEDIN"
-                    className="px-4 py-2 text-sm"
+                    className="px-2 py-2 text-mono sm:px-4 sm:py-1"
                   />
                   <LinkToAction
-                    href="https://www.google.com"
+                    href="https://github.com/bpbyn"
                     label="GITHUB"
-                    className="px-4 py-2 text-sm"
+                    className="px-2 py-2 text-mono sm:px-4 sm:py-1"
                   />
                   <LinkToAction
-                    href="https://www.google.com"
+                    href="https://www.instagram.com/bpbyn_/"
                     label="INSTAGRAM"
-                    className="px-4 py-2 text-sm"
+                    className="px-2 py-2 text-mono sm:px-4 sm:py-1"
                   />
                   <LinkToAction
-                    href="https://www.google.com"
+                    href="mailto:punongbayan.brian@gmail.com"
                     label="GMAIL"
-                    className="px-4 py-2 text-sm"
+                    className="px-2 py-2 text-mono sm:px-4 sm:py-1"
                   />
                 </p>
               </motion.div>
             </div>
           </div>
         </div>
-        <div className="relative grid w-full max-w-2xl grid-cols-2 gap-8 overflow-hidden">
+        <div className="relative hidden w-full grid-cols-1 gap-8 overflow-hidden md:grid 2xl:grid-cols-2">
           <Column
-            className="-top-[40%]"
+            className="-top-[40%] bg-transparent"
             images={[
               'me_3.png',
               'me_1.png',
@@ -141,7 +137,7 @@ export default function About() {
             y={y1}
           />
           <Column
-            className="-top-[60%]"
+            className="-top-[60%] hidden bg-transparent 2xl:flex"
             images={[
               'me_4.png',
               'me_5.png',
@@ -160,8 +156,6 @@ export default function About() {
         </div>
       </div>
       {/* <div className="bg-accent absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-[50%] rounded-full blur-[200px]" /> */}
-
-      <div className="absolute bottom-0 left-0 z-10 h-96 w-96 rounded-full bg-accent opacity-80 blur-[350px]" />
     </motion.section>
   );
 }

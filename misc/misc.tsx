@@ -19,6 +19,9 @@ export default function Misc() {
       {/* <div className="absolute top-20 size-18 rounded-full bg-red-500"></div> */}
       {/* </div> */}
       {/* button animation */}
+      {/* <CharacterScrollText
+                  paragraph={`Hi there! I’m Brian, a developer from the Philippines with a passion for solving problems and building meaningful solutions through technology.\nWhen I’m not coding, I enjoy staying up-to-date with the latest trends and innovations in the tech industry, constantly exploring how emerging technologies can shape the future.\nOutside of work, I wear many hats. I’m a proud “radiohead” and a hands-on dad, often creating fun and unique lullabies to help my little one drift off to sleep. Before parenthood, I was an avid runner who loved pushing his limits. Running remains close to my heart, and I look forward to lacing up my shoes and getting back to it soon.\nI’m always open to new opportunities, collaborations, and challenges that inspire creativity and drive progress. Let’s build something amazing together!`}
+                /> */}
       {/* <a
         className="bg-secondary-300 tracking-base text-accent-200 border-secondary-100 px-space-sm py-space-2xs text-base-small group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full border font-medium uppercase"
         target="_blank"
