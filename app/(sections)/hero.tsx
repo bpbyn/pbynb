@@ -35,7 +35,7 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative h-screen px-8 pb-8 lg:px-16 xl:px-36"
+      className="relative h-dvh min-h-screen px-8 pb-8 lg:px-16 xl:px-36"
       // style={{ opacity, y, scale }}
       id="home"
     >
