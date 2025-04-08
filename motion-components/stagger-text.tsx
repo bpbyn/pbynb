@@ -7,7 +7,7 @@ const letters = (stagger: boolean, quick: boolean) => {
     animate: {
       transition: {
         delayChildren: quick ? 0.1 : 0.4,
-        staggerChildren: 0.02,
+        staggerChildren: 0.04,
         staggerDirection: stagger ? 1 : -1,
       },
     },
@@ -20,7 +20,8 @@ const individualLetter = (quick: boolean) => {
     animate: {
       y: '0',
       transition: {
-        ease: [0.4, 0.01, 0.05, 0.95],
+        ease: [0.76, 0, 0.24, 0.95],
+        // ease: [0.4, 0.01, 0.05, 0.95],
         duration: quick ? 0.4 : 1.2,
       },
     },
