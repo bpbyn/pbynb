@@ -68,25 +68,25 @@ export default function Hero() {
                 ease: [0.76, 0, 0.1, 1],
               }}
             >
-              <TiltCard className="w-auto">
-                <Image
-                  src={'/me/me.png'}
-                  alt="brian punongbayan"
-                  className="rounded-3xl object-cover"
-                  sizes="(max-width: 640px) 70vw, (max-width: 768px) 100vw, (max-width: 1024px) 300px, (max-width: 1280px) 380px, (max-width: 1536px) 500px, 500px"
-                  width={300}
-                  height={300}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxWidth: '200px',
-                    transform: 'translateZ(75px)',
-                  }}
-                  placeholder="blur"
-                  blurDataURL={'/images/placeholder.svg'}
-                  priority
-                />
-              </TiltCard>
+              {/* <TiltCard className="w-auto"> */}
+              <Image
+                src={'/me/me.png'}
+                alt="brian punongbayan"
+                className="rounded-3xl object-cover"
+                sizes="(max-width: 640px) 70vw, (max-width: 768px) 100vw, (max-width: 1024px) 300px, (max-width: 1280px) 380px, (max-width: 1536px) 500px, 500px"
+                width={300}
+                height={300}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '200px',
+                  transform: 'translateZ(75px)',
+                }}
+                placeholder="blur"
+                blurDataURL={'/images/placeholder.svg'}
+                priority
+              />
+              {/* </TiltCard> */}
             </motion.div>
           </div>
           <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
