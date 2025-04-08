@@ -47,14 +47,14 @@ export default function RootLayout({
       >
         <svg className="pointer-events-none absolute cursor-none">
           <filter id="grainy">
-            <feTurbulence type="turbulence" baseFrequency="0.5"></feTurbulence>
+            <feTurbulence type="turbulence" baseFrequency="0.5" stitchTiles="stitch"></feTurbulence>
             <feColorMatrix type="saturate" values="0"></feColorMatrix>
           </filter>
         </svg>
-        <div className="absolute bottom-0 left-1/2 -z-20 h-1/2 w-full -translate-x-[50%] rounded-full bg-accent blur-[550px]" />
         {/* <Navbar /> */}
-        <main>{children}</main>
+        <main className="min-h-screen">{children}</main>
         {/* <Contact /> */}
+        <div className="absolute bottom-0 left-1/2 -z-20 h-1/2 w-full -translate-x-[50%] rounded-full bg-accent blur-[550px]" />
       </body>
     </html>
   );

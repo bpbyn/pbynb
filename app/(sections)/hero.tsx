@@ -3,7 +3,7 @@
 // import { Icons } from '@/components/icons';
 // import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
-import StaggerText from '@/motion-components/stagger-text';
+// import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
 
@@ -36,14 +36,14 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative h-dvh min-h-screen px-8 pb-8 lg:px-16 xl:px-36"
+      className="relative min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
       // style={{ opacity, y, scale }}
       id="home"
     >
       {/* gradients */}
       <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
       <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" />
-      <div className="absolute -bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
+      <div className="absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
       {/* gradients */}
 
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
@@ -161,7 +161,7 @@ export default function Hero() {
               />
             </TiltCard>
           </motion.div> */}
-          <div className="relative hidden h-full text-base-5xl leading-[4rem] tracking-tight text-foreground md:inline-block lg:text-base-6xl lg:leading-[6rem] 2xl:text-heading">
+          {/* <div className="relative hidden h-full text-base-5xl leading-[4rem] tracking-tight text-foreground md:inline-block lg:text-base-6xl lg:leading-[6rem] 2xl:text-heading">
             <StaggerText className="font-serif">front-end</StaggerText>
             <StaggerText className="pb-4 pr-2 font-serif">developer</StaggerText>
           </div>
@@ -175,7 +175,7 @@ export default function Hero() {
             }}
           >
             ( SCROLL TO EXPLORE )
-          </motion.span>
+          </motion.span> */}
         </div>
       </div>
       {/* <a
