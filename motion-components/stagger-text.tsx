@@ -20,7 +20,8 @@ const individualLetter = (quick: boolean) => {
     animate: {
       y: '0',
       transition: {
-        ease: [0.4, 0.01, 0.05, 0.95],
+        // ease: [0.4, 0.01, 0.05, 0.95],
+        ease: [0.6, 0.01, -0.05, 0.95],
         duration: quick ? 0.4 : 1,
       },
     },
@@ -50,7 +51,7 @@ export default function StaggerText({
       // animate={isInView ? 'animate' : 'initial'}
       variants={letters(stagger, quick)}
     >
-      {children.split('').map((l, i) => (
+      {[...children].map((l, i) => (
         <motion.span
           key={i}
           variants={individualLetter(quick)}
