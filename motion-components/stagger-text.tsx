@@ -50,7 +50,11 @@ export default function StaggerText({
       variants={letters(stagger, quick)}
     >
       {children.split('').map((l, i) => (
-        <motion.span key={i} variants={individualLetter(quick)} className="inline-flex">
+        <motion.span
+          key={i}
+          variants={individualLetter(quick)}
+          className="inline-flex will-change-transform"
+        >
           {l === ' ' ? '\u00A0' : l}
         </motion.span>
       ))}

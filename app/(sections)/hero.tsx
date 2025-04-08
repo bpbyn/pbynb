@@ -91,7 +91,9 @@ export default function Hero() {
           </div>
           <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
             {about.map((l, i) => (
-              <MaskText key={i}>{l}&nbsp;</MaskText>
+              <MaskText key={i} className="will-change-transform">
+                {l}&nbsp;
+              </MaskText>
             ))}
           </div>
 
