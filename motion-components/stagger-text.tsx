@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { motion, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 import { useRef } from 'react';
 
 const letters = (stagger: boolean, quick: boolean) => {
@@ -39,14 +39,15 @@ export default function StaggerText({
   className?: React.ComponentProps<'div'>['className'];
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  // const isInView = useInView(ref, { once: true });
 
   return (
     <motion.div
       ref={ref}
       className={cn('flex overflow-hidden', className)}
       initial="initial"
-      animate={isInView ? 'animate' : 'initial'}
+      animate="animate"
+      // animate={isInView ? 'animate' : 'initial'}
       variants={letters(stagger, quick)}
     >
       {children.split('').map((l, i) => (
