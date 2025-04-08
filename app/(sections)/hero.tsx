@@ -55,31 +55,19 @@ export default function Hero() {
             </StaggerText> */}
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 sm:gap-8 md:hidden">
-            <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
-              {/* {about.map((l, i) => (
-                <MaskText key={i}>{l}&nbsp;</MaskText>
-              ))} */}
+            <motion.div
+              className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 3.5,
+                ease: [0.76, 0, 0.1, 1],
+              }}
+            >
               {about.map((l, i) => (
-                <div className={'overflow-hidden will-change-auto'} key={i}>
-                  <motion.div
-                    initial={{
-                      y: '150%',
-                    }}
-                    // animate={isInView ? 'animate' : 'initial'}
-                    animate={{
-                      y: '0',
-                    }}
-                    transition={{
-                      duration: 2,
-                      ease: [0.76, 0, 0.1, 1],
-                    }}
-                    className="overflow-visible"
-                  >
-                    <span>{l}&nbsp;</span>
-                  </motion.div>
-                </div>
+                <span key={i}>{l}&nbsp;</span>
               ))}
-            </div>
+            </motion.div>
             <motion.div
               className="relative cursor-pointer justify-self-end md:hidden"
               initial={{ opacity: 0 }}
