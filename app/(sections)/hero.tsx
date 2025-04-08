@@ -1,6 +1,6 @@
 'use client';
 
-import { Icons } from '@/components/icons';
+// import { Icons } from '@/components/icons';
 // import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
@@ -60,8 +60,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: '150%' }}
               animate={{ opacity: 1, y: '0' }}
               transition={{
-                duration: 3.5,
-                ease: [0.76, 0, 0.1, 1],
+                duration: 1.5,
+                // ease: [0.76, 0, 0.1, 1],
               }}
             >
               {about.map((l, i) => (
@@ -108,7 +108,7 @@ export default function Hero() {
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
             {/* <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" /> */}
-            <motion.span
+            {/* <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -117,7 +117,7 @@ export default function Hero() {
               }}
             >
               <Icons.arrow45deg className="h-9 w-9 rotate-90 md:hidden" />
-            </motion.span>
+            </motion.span> */}
           </div>
           <motion.span
             className="hidden w-full text-left font-mono text-base-xs font-light text-muted md:block lg:text-base"
