@@ -247,7 +247,12 @@ export default function Experience() {
           <div className="flex items-center justify-end">
             <div className="group flex cursor-pointer gap-4">
               <motion.div style={{ scale: scaleExit }}>
-                <LinkToAction style={{ scale }} href="https://www.google.com" label="RESUME" />
+                <LinkToAction
+                  style={{ scale }}
+                  href="https://www.google.com"
+                  label="RESUME"
+                  className="px-8 py-4"
+                />
               </motion.div>
               <motion.div style={{ scale: scaleExit }}>
                 <motion.div className="relative" style={{ scale }}>

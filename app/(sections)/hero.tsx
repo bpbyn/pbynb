@@ -5,7 +5,8 @@ import LinkToAction from '@/motion-components/link-to-action';
 import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 import TiltCard from '@/motion-components/tilt-card';
-import { motion, useScroll, useSpring, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
+// import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 
 const about = [
@@ -14,28 +15,28 @@ const about = [
 ];
 
 export default function Hero() {
-  const { scrollYProgress } = useScroll();
+  // const { scrollYProgress } = useScroll();
 
-  const smoothVelocity = useSpring(scrollYProgress, {
-    stiffness: 1000,
-    damping: 10,
-    mass: 0.00001,
-  });
+  // const smoothVelocity = useSpring(scrollYProgress, {
+  //   stiffness: 1000,
+  //   damping: 10,
+  //   mass: 0.00001,
+  // });
 
-  const opacity = useTransform(smoothVelocity, [0, 0.5], [1, 0], {
-    clamp: true,
-  });
-  const y = useTransform(smoothVelocity, [0, 0.2], [0, 300], {
-    clamp: true,
-  });
-  const scale = useTransform(smoothVelocity, [0, 0.1], [1, 0.9], {
-    clamp: true,
-  });
+  // const opacity = useTransform(smoothVelocity, [0, 0.5], [1, 0], {
+  //   clamp: true,
+  // });
+  // const y = useTransform(smoothVelocity, [0, 0.2], [0, 300], {
+  //   clamp: true,
+  // });
+  // const scale = useTransform(smoothVelocity, [0, 0.1], [1, 0.9], {
+  //   clamp: true,
+  // });
 
   return (
     <motion.section
       className="relative h-screen px-8 pb-8 lg:px-16 xl:px-36"
-      style={{ opacity, y, scale }}
+      // style={{ opacity, y, scale }}
       id="home"
     >
       {/* gradients */}
