@@ -2,17 +2,17 @@
 
 import { Icons } from '@/components/icons';
 import LinkToAction from '@/motion-components/link-to-action';
-import MaskText from '@/motion-components/mask-text';
+// import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
-import TiltCard from '@/motion-components/tilt-card';
+// import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
 
-const about = [
-  'I’m a Full Stack Developer specializing in intuitive front-end development.',
-  'I craft pixel-perfect user interfaces that bring ideas to life.',
-];
+// const about = [
+//   'I’m a Full Stack Developer specializing in intuitive front-end development.',
+//   'I craft pixel-perfect user interfaces that bring ideas to life.',
+// ];
 
 export default function Hero() {
   // const { scrollYProgress } = useScroll();
@@ -54,11 +54,11 @@ export default function Hero() {
             </StaggerText>
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 sm:gap-8 md:hidden">
-            <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
+            {/* <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
               {about.map((l, i) => (
                 <MaskText key={i}>{l}&nbsp;</MaskText>
               ))}
-            </div>
+            </div> */}
             <motion.div
               className="relative cursor-pointer justify-self-end md:hidden"
               initial={{ opacity: 0 }}
@@ -89,13 +89,13 @@ export default function Hero() {
               {/* </TiltCard> */}
             </motion.div>
           </div>
-          <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
+          {/* <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
             {about.map((l, i) => (
               <MaskText key={i} className="will-change-transform">
                 {l}&nbsp;
               </MaskText>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
             <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" />
@@ -123,7 +123,7 @@ export default function Hero() {
           </motion.span>
         </div>
         <div className="hidden h-full place-content-end gap-8 md:grid lg:gap-16 xl:gap-28">
-          <motion.div
+          {/* <motion.div
             className="relative grid h-full cursor-pointer justify-self-end md:pr-8 lg:pr-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -151,7 +151,7 @@ export default function Hero() {
                 priority
               />
             </TiltCard>
-          </motion.div>
+          </motion.div> */}
           <div className="relative hidden h-full text-base-5xl leading-[4rem] tracking-tight text-foreground md:inline-block lg:text-base-6xl lg:leading-[6rem] 2xl:text-heading">
             <StaggerText className="font-serif">front-end</StaggerText>
             <StaggerText className="pb-4 pr-2 font-serif">developer</StaggerText>
