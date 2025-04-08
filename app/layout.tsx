@@ -1,4 +1,4 @@
-// import Navbar from '@/components/navbar';
+import Navbar from '@/components/navbar';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { DM_Mono, DM_Serif_Display, Poppins } from 'next/font/google';
@@ -52,7 +52,7 @@ export default function RootLayout({
           </filter>
         </svg>
         <div className="absolute bottom-0 left-1/2 -z-20 h-1/2 w-full -translate-x-[50%] rounded-full bg-accent blur-[550px]" />
-        {/* <Navbar /> */}
+        <Navbar />
         <main>{children}</main>
         {/* <Contact /> */}
       </body>
