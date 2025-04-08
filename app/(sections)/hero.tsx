@@ -1,13 +1,14 @@
 'use client';
 
 import { Icons } from '@/components/icons';
-import LinkToAction from '@/motion-components/link-to-action';
+// import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
+
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 // const about = [
 //   'I’m a Full Stack Developer specializing in intuitive front-end development.',
@@ -69,7 +70,7 @@ export default function Hero() {
               }}
             >
               {/* <TiltCard className="w-auto"> */}
-              <Image
+              {/* <Image
                 src={'/me/me.png'}
                 alt="brian punongbayan"
                 className="rounded-3xl object-cover"
@@ -85,7 +86,7 @@ export default function Hero() {
                 placeholder="blur"
                 blurDataURL={'/images/placeholder.svg'}
                 priority
-              />
+              /> */}
               {/* </TiltCard> */}
             </motion.div>
           </div>
@@ -98,7 +99,7 @@ export default function Hero() {
           </div> */}
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
-            <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" />
+            {/* <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" /> */}
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
