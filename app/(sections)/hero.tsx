@@ -2,7 +2,7 @@
 
 import { Icons } from '@/components/icons';
 // import LinkToAction from '@/motion-components/link-to-action';
-import MaskText from '@/motion-components/mask-text';
+// import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
@@ -56,8 +56,28 @@ export default function Hero() {
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
-              {about.map((l, i) => (
+              {/* {about.map((l, i) => (
                 <MaskText key={i}>{l}&nbsp;</MaskText>
+              ))} */}
+              {about.map((l, i) => (
+                <div className={'overflow-hidden will-change-auto'} key={i}>
+                  <motion.div
+                    initial={{
+                      y: '150%',
+                    }}
+                    // animate={isInView ? 'animate' : 'initial'}
+                    animate={{
+                      y: '0',
+                    }}
+                    transition={{
+                      duration: 2,
+                      ease: [0.76, 0, 0.1, 1],
+                    }}
+                    className="overflow-visible"
+                  >
+                    <span>{l}&nbsp;</span>
+                  </motion.div>
+                </div>
               ))}
             </div>
             <motion.div
