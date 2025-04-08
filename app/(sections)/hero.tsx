@@ -54,11 +54,11 @@ export default function Hero() {
               punongbayan
             </StaggerText> */}
           </div>
-          <div className="grid grid-cols-2 place-items-center gap-4 sm:gap-8 md:hidden">
+          <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <motion.div
               className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, y: '150%' }}
+              animate={{ opacity: 1, y: '0' }}
               transition={{
                 duration: 3.5,
                 ease: [0.76, 0, 0.1, 1],
