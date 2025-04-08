@@ -1,5 +1,6 @@
 'use client';
 
+import MaskText from '@/motion-components/mask-text';
 // import { Icons } from '@/components/icons';
 // import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
@@ -36,7 +37,7 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
+      className="relative h-svh min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
       // style={{ opacity, y, scale }}
       id="home"
     >
@@ -55,19 +56,11 @@ export default function Hero() {
             </StaggerText> */}
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
-            <motion.div
-              className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base"
-              initial={{ opacity: 0, y: '150%' }}
-              animate={{ opacity: 1, y: '0' }}
-              transition={{
-                duration: 1.5,
-                // ease: [0.76, 0, 0.1, 1],
-              }}
-            >
+            <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
               {about.map((l, i) => (
-                <span key={i}>{l}&nbsp;</span>
+                <MaskText key={i}>{l}&nbsp;</MaskText>
               ))}
-            </motion.div>
+            </div>
             <motion.div
               className="relative cursor-pointer justify-self-end md:hidden"
               initial={{ opacity: 0 }}
@@ -98,17 +91,17 @@ export default function Hero() {
               {/* </TiltCard> */}
             </motion.div>
           </div>
-          {/* <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
+          <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
             {about.map((l, i) => (
               <MaskText key={i} className="will-change-transform">
                 {l}&nbsp;
               </MaskText>
             ))}
-          </div> */}
+          </div>
 
-          <div className="flex w-full flex-row-reverse items-center justify-between md:block">
-            {/* <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" /> */}
-            {/* <motion.span
+          {/* <div className="flex w-full flex-row-reverse items-center justify-between md:block">
+            <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" />
+            <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -117,7 +110,7 @@ export default function Hero() {
               }}
             >
               <Icons.arrow45deg className="h-9 w-9 rotate-90 md:hidden" />
-            </motion.span> */}
+            </motion.span>
           </div>
           <motion.span
             className="hidden w-full text-left font-mono text-base-xs font-light text-muted md:block lg:text-base"
@@ -129,7 +122,7 @@ export default function Hero() {
             }}
           >
             © 2025 BULACAN, PH
-          </motion.span>
+          </motion.span> */}
         </div>
         <div className="hidden h-full place-content-end gap-8 md:grid lg:gap-16 xl:gap-28">
           {/* <motion.div
@@ -164,7 +157,7 @@ export default function Hero() {
           {/* <div className="relative hidden h-full text-base-5xl leading-[4rem] tracking-tight text-foreground md:inline-block lg:text-base-6xl lg:leading-[6rem] 2xl:text-heading">
             <StaggerText className="font-serif">front-end</StaggerText>
             <StaggerText className="pb-4 pr-2 font-serif">developer</StaggerText>
-          </div>
+          </div> */}
           <motion.span
             className="w-full text-right font-mono text-base-xs font-light text-muted lg:text-base"
             initial={{ opacity: 0 }}
@@ -175,7 +168,7 @@ export default function Hero() {
             }}
           >
             ( SCROLL TO EXPLORE )
-          </motion.span> */}
+          </motion.span>
         </div>
       </div>
       {/* <a
