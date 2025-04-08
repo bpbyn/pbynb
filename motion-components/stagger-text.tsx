@@ -20,10 +20,10 @@ const individualLetter = (quick: boolean) => {
     animate: {
       y: '0',
       transition: {
-        // ease: [0.4, 0.01, 0.05, 0.95],
+        ease: [0.4, 0.01, 0.05, 0.95],
         // ease: [0.6, 0.01, -0.05, 0.95],
-        ease: [0.76, 0, 0.24, 1],
-        duration: quick ? 0.4 : 0.7,
+        // ease: [0.76, 0, 0.24, 1],
+        duration: quick ? 0.4 : 1.2,
       },
     },
   };
@@ -56,7 +56,7 @@ export default function StaggerText({
         <motion.span
           key={i}
           variants={individualLetter(quick)}
-          className="inline-flex will-change-transform"
+          className="inline-block will-change-transform"
         >
           {l}
         </motion.span>
