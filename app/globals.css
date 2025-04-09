@@ -40,7 +40,7 @@ body {
   background: var(--background);
 }
 
-/* body::after, body::before {
+body::after, body::before {
   position: fixed;
   left: 0;
   top: 0;
@@ -54,7 +54,7 @@ body {
 
 body::before {
   filter:url(#grainy);
-} */
+}
 
 h1, h2, h3 {
   font-family: var(--font-dm-serif-display);
