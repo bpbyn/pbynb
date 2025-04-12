@@ -32,7 +32,15 @@ export const navigation = [
 const scroll = (scrollVal: number) => {
   return {
     animate: {
-      y: scrollVal >= 50 ? '-150%' : '0%',
+      y: scrollVal >= 50 ? '-150%' : '0',
+      transition: {
+        ease: [0.65, 0, 0.35, 1],
+        duration: 0.5,
+        damping: 100,
+      },
+    },
+    exit: {
+      y: '0',
       transition: {
         ease: [0.65, 0, 0.35, 1],
         duration: 0.5,

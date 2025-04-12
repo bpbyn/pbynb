@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
-import { useRef } from 'react';
+import React from 'react';
+import { useMemo, useRef } from 'react';
 
-const letters = (stagger: boolean, quick: boolean) => {
+const lettersAnim = (stagger: boolean, quick: boolean) => {
   return {
     animate: {
       transition: {
@@ -29,7 +30,7 @@ const individualLetter = (quick: boolean) => {
   };
 };
 
-export default function StaggerText({
+export function StaggerTextComponent({
   children,
   stagger = false,
   quick = false,
@@ -43,6 +44,8 @@ export default function StaggerText({
   const ref = useRef(null);
   // const isInView = useInView(ref, { once: true });
 
+  const letters = useMemo(() => Array.from(children), [children]);
+
   return (
     <motion.div
       ref={ref}
@@ -50,9 +53,9 @@ export default function StaggerText({
       initial="initial"
       animate="animate"
       // animate={isInView ? 'animate' : 'initial'}
-      variants={letters(stagger, quick)}
+      variants={lettersAnim(stagger, quick)}
     >
-      {children.split('').map((l, i) => (
+      {letters.map((l, i) => (
         <motion.span
           key={i}
           variants={individualLetter(quick)}
@@ -64,3 +67,7 @@ export default function StaggerText({
     </motion.div>
   );
 }
+
+const StaggerText = React.memo(StaggerTextComponent);
+
+export default StaggerText;
