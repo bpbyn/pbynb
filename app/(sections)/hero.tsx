@@ -4,7 +4,7 @@
 // import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
 // import MaskText from '@/motion-components/mask-text';
-import StaggerText from '@/motion-components/stagger-text';
+// import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
 
@@ -35,6 +35,34 @@ export default function Hero() {
   //   clamp: true,
   // });
 
+  const lettersAnim = (stagger: boolean, quick: boolean) => {
+    return {
+      animate: {
+        transition: {
+          delayChildren: quick ? 0.1 : 0.4,
+          staggerChildren: 0.04,
+          staggerDirection: stagger ? 1 : -1,
+        },
+      },
+    };
+  };
+
+  const individualLetter = (quick: boolean) => {
+    return {
+      initial: { y: '200%' },
+      animate: {
+        y: '0',
+        transition: {
+          // ease: [0.4, 0.01, 0.05, 0.95],
+          ease: [0.6, 0.01, -0.05, 0.95],
+          // ease: [0.76, 0, 0.24, 1],
+          // ease: [0.65, 0, 0.35, 1],
+          duration: quick ? 0.4 : 0.8,
+        },
+      },
+    };
+  };
+
   return (
     <motion.section
       className="relative h-svh min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
@@ -50,10 +78,33 @@ export default function Hero() {
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
         <div className="flex h-full flex-col items-start justify-end gap-8 lg:gap-24 2xl:gap-32">
           <div className="relative font-serif text-base-4xl leading-none tracking-tight text-foreground sm:text-base-6xl sm:leading-[4rem] lg:text-heading lg:leading-[6.5rem] 2xl:text-heading-md">
-            <StaggerText stagger={true}>brian</StaggerText>
-            <StaggerText className="pb-3 md:pb-8" stagger={true}>
+            <motion.span
+              className="relative flex overflow-hidden"
+              initial="initial"
+              animate="animate"
+              variants={lettersAnim(true, false)}
+            >
+              {'brian'.split('').map((l, i) => (
+                <motion.span key={i} variants={individualLetter(false)}>
+                  <span className="will-change-transform">{l}</span>
+                </motion.span>
+              ))}
+            </motion.span>
+            <motion.span
+              className="relative flex overflow-hidden pb-3 md:pb-8"
+              initial="initial"
+              animate="animate"
+              variants={lettersAnim(true, false)}
+            >
+              {'punongbayan'.split('').map((l, i) => (
+                <motion.span key={i} variants={individualLetter(false)}>
+                  <span className="will-change-transform">{l}</span>
+                </motion.span>
+              ))}
+            </motion.span>
+            {/* <StaggerText className="pb-3 md:pb-8" stagger={true}>
               punongbayan
-            </StaggerText>
+            </StaggerText> */}
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
