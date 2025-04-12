@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
-            <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-medium" />
+            <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-mono" />
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

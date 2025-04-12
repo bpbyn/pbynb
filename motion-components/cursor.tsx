@@ -99,7 +99,7 @@ export default function Cursor({ linksRef }: { linksRef: RefObject<HTMLDivElemen
       animate={cursorVariant}
       transition={spring}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
-      className="pointer-events-none fixed z-[999] flex h-4 w-4 items-center justify-center gap-2 overflow-hidden rounded-lg"
+      className="pointer-events-none fixed z-[999] hidden h-4 w-4 items-center justify-center gap-2 overflow-hidden rounded-lg md:flex"
     >
       {cursorTexts.length > 0 && (
         <>

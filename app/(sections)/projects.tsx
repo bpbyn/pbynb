@@ -133,14 +133,15 @@ export default function Projects() {
             >
               <Link href={w.href} target="_blank">
                 <div className="grid grid-cols-1 gap-8" ref={i === 1 ? scaleRef : null}>
-                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl p-8 md:p-16">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl p-16">
                     <video
                       src={w.videoURL}
                       autoPlay
                       muted
                       loop
                       playsInline
-                      className="relative z-10 h-full w-full rounded-xl"
+                      preload="metadata"
+                      className="relative z-10 w-full rounded-xl"
                     />
                     {/* Overlay image */}
                     <div className="pointer-events-none absolute inset-0 z-0 blur-xl">
