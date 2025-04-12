@@ -7,6 +7,7 @@
 // import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
+import { lazy } from 'react';
 
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 // import Image from 'next/image';
@@ -15,6 +16,8 @@ const about = [
   'I’m a Full Stack Developer specializing in intuitive front-end development.',
   'I craft pixel-perfect user interfaces that bring ideas to life.',
 ];
+
+export const MaskTextLazy = lazy(() => import('@/motion-components/mask-text'));
 
 export default function Hero() {
   // const { scrollYProgress } = useScroll();
@@ -58,21 +61,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
               {about.map((l, i) => (
-                // <MaskText key={i}>{l}&nbsp;</MaskText>
-                <div className="overflow-hidden will-change-transform" key={i}>
-                  <motion.div
-                    initial={{
-                      y: '150%',
-                    }}
-                    animate={{ y: '0' }}
-                    transition={{
-                      duration: 2,
-                      ease: [0.76, 0, 0.1, 1],
-                    }}
-                  >
-                    {l + ' '}
-                  </motion.div>
-                </div>
+                <MaskTextLazy key={i}>{l}&nbsp;</MaskTextLazy>
               ))}
             </div>
             <motion.div
