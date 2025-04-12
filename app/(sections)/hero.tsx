@@ -11,10 +11,10 @@ import { motion } from 'motion/react';
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 // import Image from 'next/image';
 
-const about = [
-  'I’m a Full Stack Developer specializing in intuitive front-end development.',
-  'I craft pixel-perfect user interfaces that bring ideas to life.',
-];
+// const about = [
+//   'I’m a Full Stack Developer specializing in intuitive front-end development.',
+//   'I craft pixel-perfect user interfaces that bring ideas to life.',
+// ];
 
 export default function Hero() {
   // const { scrollYProgress } = useScroll();
@@ -57,8 +57,7 @@ export default function Hero() {
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
-              {about.map((l, i) => (
-                // <MaskText key={i}>{l}&nbsp;</MaskText>
+              {/* {about.map((l, i) => (
                 <div className="overflow-hidden will-change-transform" key={i}>
                   <motion.div
                     initial={{
@@ -73,7 +72,7 @@ export default function Hero() {
                     {l + ' '}
                   </motion.div>
                 </div>
-              ))}
+              ))} */}
             </div>
             <motion.div
               className="relative cursor-pointer justify-self-end md:hidden"
@@ -188,7 +187,7 @@ export default function Hero() {
             <StaggerText className="font-serif">front-end</StaggerText>
             <StaggerText className="pb-4 pr-2 font-serif">developer</StaggerText>
           </div> */}
-          <motion.span
+          {/* <motion.span
             className="w-full text-right font-mono text-base-xs font-light text-muted lg:text-base"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -198,7 +197,7 @@ export default function Hero() {
             }}
           >
             ( SCROLL TO EXPLORE )
-          </motion.span>
+          </motion.span> */}
         </div>
       </div>
       {/* <a
