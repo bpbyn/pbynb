@@ -7,7 +7,7 @@
 // import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
-import { lazy } from 'react';
+import dynamic from 'next/dynamic';
 
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 // import Image from 'next/image';
@@ -17,7 +17,7 @@ const about = [
   'I craft pixel-perfect user interfaces that bring ideas to life.',
 ];
 
-export const MaskTextLazy = lazy(() => import('@/motion-components/mask-text'));
+export const MaskTextLazy = dynamic(() => import('@/motion-components/mask-text'));
 
 export default function Hero() {
   // const { scrollYProgress } = useScroll();
