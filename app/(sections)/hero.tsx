@@ -35,33 +35,33 @@ export default function Hero() {
   //   clamp: true,
   // });
 
-  const lettersAnim = (stagger: boolean, quick: boolean) => {
-    return {
-      animate: {
-        transition: {
-          delayChildren: quick ? 0.1 : 0.4,
-          staggerChildren: 0.04,
-          staggerDirection: stagger ? 1 : -1,
-        },
-      },
-    };
-  };
+  // const lettersAnim = (stagger: boolean, quick: boolean) => {
+  //   return {
+  //     animate: {
+  //       transition: {
+  //         delayChildren: quick ? 0.1 : 0.4,
+  //         staggerChildren: 0.04,
+  //         staggerDirection: stagger ? 1 : -1,
+  //       },
+  //     },
+  //   };
+  // };
 
-  const individualLetter = (quick: boolean) => {
-    return {
-      initial: { y: '200%' },
-      animate: {
-        y: '0',
-        transition: {
-          // ease: [0.4, 0.01, 0.05, 0.95],
-          ease: [0.6, 0.01, -0.05, 0.95],
-          // ease: [0.76, 0, 0.24, 1],
-          // ease: [0.65, 0, 0.35, 1],
-          duration: quick ? 0.4 : 0.8,
-        },
-      },
-    };
-  };
+  // const individualLetter = (quick: boolean) => {
+  //   return {
+  //     initial: { y: '200%' },
+  //     animate: {
+  //       y: '0',
+  //       transition: {
+  //         // ease: [0.4, 0.01, 0.05, 0.95],
+  //         ease: [0.6, 0.01, -0.05, 0.95],
+  //         // ease: [0.76, 0, 0.24, 1],
+  //         // ease: [0.65, 0, 0.35, 1],
+  //         duration: quick ? 0.4 : 0.8,
+  //       },
+  //     },
+  //   };
+  // };
 
   return (
     <motion.section
@@ -80,29 +80,48 @@ export default function Hero() {
           <div className="relative font-serif text-base-4xl leading-none tracking-tight text-foreground sm:text-base-6xl sm:leading-[4rem] lg:text-heading lg:leading-[6.5rem] 2xl:text-heading-md">
             <motion.span
               className="relative flex overflow-hidden"
-              initial="initial"
-              animate="animate"
-              variants={lettersAnim(true, false)}
+              // initial="initial"
+              // animate="animate"
+              // variants={lettersAnim(true, false)}
             >
               {'brian'.split('').map((l, i) => (
-                <motion.span key={i} variants={individualLetter(false)}>
+                <motion.span
+                  key={i}
+                  initial={{
+                    y: '200%',
+                  }}
+                  animate={{
+                    y: '0',
+                  }}
+                  transition={{ duration: 0.9, ease: 'anticipate', delay: i * 0.04 }}
+                >
                   <span className="will-change-transform">{l}</span>
                 </motion.span>
               ))}
             </motion.span>
             <motion.span
               className="relative flex overflow-hidden pb-3 md:pb-8"
-              initial="initial"
-              animate="animate"
-              variants={lettersAnim(true, false)}
+              // initial="initial"
+              // animate="animate"
+              // variants={lettersAnim(true, false)}
             >
               {'punongbayan'.split('').map((l, i) => (
-                <motion.span key={i} variants={individualLetter(false)}>
+                <motion.span
+                  key={i}
+                  initial={{
+                    y: '200%',
+                  }}
+                  animate={{
+                    y: '0',
+                  }}
+                  transition={{ duration: 0.9, ease: 'anticipate', delay: i * 0.04 }}
+                >
                   <span className="will-change-transform">{l}</span>
                 </motion.span>
               ))}
             </motion.span>
-            {/* <StaggerText className="pb-3 md:pb-8" stagger={true}>
+            {/* <StaggerText stagger={true}>brian</StaggerText>
+            <StaggerText className="pb-3 md:pb-8" stagger={true}>
               punongbayan
             </StaggerText> */}
           </div>
