@@ -4,17 +4,17 @@
 // import LinkToAction from '@/motion-components/link-to-action';
 // import MaskText from '@/motion-components/mask-text';
 // import MaskText from '@/motion-components/mask-text';
-// import StaggerText from '@/motion-components/stagger-text';
+import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
 
 // import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 // import Image from 'next/image';
 
-// const about = [
-//   'I’m a Full Stack Developer specializing in intuitive front-end development.',
-//   'I craft pixel-perfect user interfaces that bring ideas to life.',
-// ];
+const about = [
+  'I’m a Full Stack Developer specializing in intuitive front-end development.',
+  'I craft pixel-perfect user interfaces that bring ideas to life.',
+];
 
 export default function Hero() {
   // const { scrollYProgress } = useScroll();
@@ -70,66 +70,22 @@ export default function Hero() {
       id="home"
     >
       {/* gradients */}
-      {/* <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
-      <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" />
-      <div className="absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" /> */}
+      {/* <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" /> */}
+      {/* <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" /> */}
+      {/* <div className="absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" /> */}
       {/* gradients */}
 
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
         <div className="flex h-full flex-col items-start justify-end gap-8 lg:gap-24 2xl:gap-32">
           <div className="relative font-serif text-base-4xl leading-none tracking-tight text-foreground sm:text-base-6xl sm:leading-[4rem] lg:text-heading lg:leading-[6.5rem] 2xl:text-heading-md">
-            <motion.span
-              className="relative flex overflow-hidden"
-              // initial="initial"
-              // animate="animate"
-              // variants={lettersAnim(true, false)}
-            >
-              {'brian'.split('').map((l, i) => (
-                <motion.span
-                  key={i}
-                  initial={{
-                    y: '50px',
-                  }}
-                  animate={{
-                    y: '0',
-                  }}
-                  transition={{ duration: 0.9, ease: 'anticipate', delay: i * 0.04 }}
-                  // variants={{
-                  // }}
-                >
-                  <span className="will-change-transform">{l}</span>
-                </motion.span>
-              ))}
-            </motion.span>
-            <motion.span
-              className="relative flex overflow-hidden pb-3 md:pb-8"
-              // initial="initial"
-              // animate="animate"
-              // variants={lettersAnim(true, false)}
-            >
-              {'punongbayan'.split('').map((l, i) => (
-                <motion.span
-                  key={i}
-                  initial={{
-                    y: '200%',
-                  }}
-                  animate={{
-                    y: '0',
-                  }}
-                  transition={{ duration: 0.9, ease: 'anticipate', delay: i * 0.04 }}
-                >
-                  <span className="will-change-transform">{l}</span>
-                </motion.span>
-              ))}
-            </motion.span>
-            {/* <StaggerText stagger={true}>brian</StaggerText>
+            <StaggerText stagger={true}>brian</StaggerText>
             <StaggerText className="pb-3 md:pb-8" stagger={true}>
               punongbayan
-            </StaggerText> */}
+            </StaggerText>
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
-              {/* {about.map((l, i) => (
+              {about.map((l, i) => (
                 <div className="overflow-hidden will-change-transform" key={i}>
                   <motion.div
                     initial={{
@@ -144,7 +100,7 @@ export default function Hero() {
                     {l + ' '}
                   </motion.div>
                 </div>
-              ))} */}
+              ))}
             </div>
             <motion.div
               className="relative cursor-pointer justify-self-end md:hidden"
