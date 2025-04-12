@@ -21,7 +21,7 @@ const individualLetter = (quick: boolean) => {
     animate: {
       y: '0',
       transition: {
-        // ease: [0.4, 0.01, 0.05, 1],
+        // ease: [0.4, 0.01, 0.05, 0.95],
         // ease: [0.6, 0.01, -0.05, 0.95],
         // ease: [0.76, 0, 0.24, 1],
         ease: [0.65, 0, 0.35, 1],
@@ -31,7 +31,7 @@ const individualLetter = (quick: boolean) => {
   };
 };
 
-export default function StaggerText({
+export function StaggerTextComponent({
   children,
   stagger = false,
   quick = false,
@@ -68,3 +68,7 @@ export default function StaggerText({
     </motion.div>
   );
 }
+
+const StaggerText = React.memo(StaggerTextComponent);
+
+export default StaggerText;
