@@ -60,7 +60,7 @@ export function StaggerTextComponent({
         <motion.span
           key={i}
           variants={individualLetter(quick)}
-          className="inline-block will-change-auto"
+          className="relative inline-flex will-change-transform"
           // initial={{
           //   y: '200%',
           // }}
