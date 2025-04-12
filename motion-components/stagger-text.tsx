@@ -48,10 +48,10 @@ export function StaggerTextComponent({
   const letters = useMemo(() => Array.from(children), [children]);
 
   return (
-    <motion.div
+    <motion.span
       // ref={ref}
-      className={cn('flex overflow-hidden', className)}
       // animate={isInView ? 'animate' : 'initial'}
+      className={cn('relative flex overflow-hidden', className)}
       initial="initial"
       animate="animate"
       variants={lettersAnim(stagger, quick)}
@@ -60,7 +60,6 @@ export function StaggerTextComponent({
         <motion.span
           key={i}
           variants={individualLetter(quick)}
-          className="relative inline-flex will-change-transform"
           // initial={{
           //   y: '200%',
           // }}
@@ -68,10 +67,10 @@ export function StaggerTextComponent({
           //   y: '0',
           // }}
         >
-          {l}
+          <span className="will-change-transform">{l}</span>
         </motion.span>
       ))}
-    </motion.div>
+    </motion.span>
   );
 }
 
