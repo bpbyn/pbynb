@@ -4,7 +4,7 @@
 // import LinkToAction from '@/motion-components/link-to-action';
 import MaskText from '@/motion-components/mask-text';
 // import MaskText from '@/motion-components/mask-text';
-// import StaggerText from '@/motion-components/stagger-text';
+import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
 import { motion } from 'motion/react';
 
@@ -50,10 +50,10 @@ export default function Hero() {
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
         <div className="flex h-full flex-col items-start justify-end gap-8 lg:gap-24 2xl:gap-32">
           <div className="relative font-serif text-base-4xl leading-none tracking-tight text-foreground sm:text-base-6xl sm:leading-[4rem] lg:text-heading lg:leading-[6.5rem] 2xl:text-heading-md">
-            {/* <StaggerText stagger={true}>brian</StaggerText>
+            <StaggerText stagger={true}>brian</StaggerText>
             <StaggerText className="pb-3 md:pb-8" stagger={true}>
               punongbayan
-            </StaggerText> */}
+            </StaggerText>
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">

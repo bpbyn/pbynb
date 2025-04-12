@@ -2,8 +2,7 @@ import { ReactLenis } from 'lenis/react';
 
 // import About from './(sections)/about';
 // import Experience from './(sections)/experience';
-// import Hero from './(sections)/hero';
-import HeroTest from './(sections)/hero-test';
+import Hero from './(sections)/hero';
 
 // import PreLoader from './(sections)/preloader';
 // import Projects from './(sections)/projects';
@@ -13,8 +12,7 @@ export default function Home() {
   return (
     <ReactLenis root>
       {/* <PreLoader /> */}
-      {/* <Hero /> */}
-      <HeroTest />
+      <Hero />
       {/* <About />
       <Experience />
       <Works />
