@@ -1,9 +1,8 @@
 import { cn } from '@/lib/utils';
-import { motion } from 'motion/react';
-import React from 'react';
-import { useMemo } from 'react';
+import { motion, useInView } from 'motion/react';
+import { useRef } from 'react';
 
-const lettersAnim = (stagger: boolean, quick: boolean) => {
+const letters = (stagger: boolean, quick: boolean) => {
   return {
     animate: {
       transition: {
@@ -21,17 +20,14 @@ const individualLetter = (quick: boolean) => {
     animate: {
       y: '0',
       transition: {
-        // ease: [0.4, 0.01, 0.05, 0.95],
         ease: [0.6, 0.01, -0.05, 0.95],
-        // ease: [0.76, 0, 0.24, 1],
-        // ease: [0.65, 0, 0.35, 1],
-        duration: quick ? 0.4 : 0.8,
+        duration: quick ? 0.4 : 1.2,
       },
     },
   };
 };
 
-export function StaggerTextComponent({
+export default function StaggerText({
   children,
   stagger = false,
   quick = false,
@@ -42,38 +38,26 @@ export function StaggerTextComponent({
   quick?: boolean;
   className?: React.ComponentProps<'div'>['className'];
 }) {
-  // const ref = useRef(null);
-  // const isInView = useInView(ref, { once: true });
-
-  const letters = useMemo(() => Array.from(children), [children]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
 
   return (
-    <motion.span
-      // ref={ref}
-      // animate={isInView ? 'animate' : 'initial'}
-      className={cn('relative flex overflow-hidden', className)}
+    <motion.div
+      ref={ref}
+      className={cn('flex overflow-hidden', className)}
       initial="initial"
-      animate="animate"
-      variants={lettersAnim(stagger, quick)}
+      animate={isInView ? 'animate' : 'initial'}
+      variants={letters(stagger, quick)}
     >
-      {letters.map((l, i) => (
+      {children.split('').map((l, i) => (
         <motion.span
           key={i}
           variants={individualLetter(quick)}
-          // initial={{
-          //   y: '200%',
-          // }}
-          // animate={{
-          //   y: '0',
-          // }}
+          className="inline-flex will-change-transform"
         >
-          <span className="will-change-transform">{l}</span>
+          {l === ' ' ? '\u00A0' : l}
         </motion.span>
       ))}
-    </motion.span>
+    </motion.div>
   );
 }
-
-const StaggerText = React.memo(StaggerTextComponent);
-
-export default StaggerText;
