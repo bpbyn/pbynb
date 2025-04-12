@@ -21,7 +21,7 @@ export default function Contact() {
         <section className="relative flex h-screen flex-col" id="contact">
           {/* <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[350px]" /> */}
           {/* <div className="absolute h-1/2 w-full translate-y-[50%] bg-accent blur-[350px]" /> */}
-          <div className="relative grid h-full grid-cols-1 px-8 py-8 md:grid-cols-2 lg:px-16 xl:gap-52 xl:px-36">
+          <div className="relative grid h-full grid-cols-1 gap-16 px-8 py-8 md:grid-cols-2 lg:px-16 xl:gap-52 xl:px-36">
             <div className="grid place-content-between lg:pt-16">
               <div className="w-full">
                 <span className="font-mono text-base font-light text-muted lg:text-base-md">
