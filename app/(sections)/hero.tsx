@@ -111,7 +111,7 @@ export default function Hero() {
                 {l}&nbsp;
               </MaskText>
             ))} */}
-            {about.map((l, i) => (
+            {/* {about.map((l, i) => (
               <div className="overflow-hidden will-change-transform" key={i}>
                 <motion.div
                   initial={{
@@ -126,7 +126,7 @@ export default function Hero() {
                   {l + ' '}
                 </motion.div>
               </div>
-            ))}
+            ))} */}
           </div>
 
           {/* <div className="flex w-full flex-row-reverse items-center justify-between md:block">

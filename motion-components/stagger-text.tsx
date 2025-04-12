@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import React from 'react';
-import { useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 
 const lettersAnim = (stagger: boolean, quick: boolean) => {
   return {
@@ -42,25 +42,31 @@ export function StaggerTextComponent({
   quick?: boolean;
   className?: React.ComponentProps<'div'>['className'];
 }) {
-  const ref = useRef(null);
+  // const ref = useRef(null);
   // const isInView = useInView(ref, { once: true });
 
   const letters = useMemo(() => Array.from(children), [children]);
 
   return (
     <motion.div
-      ref={ref}
+      // ref={ref}
       className={cn('flex overflow-hidden', className)}
+      // animate={isInView ? 'animate' : 'initial'}
       initial="initial"
       animate="animate"
-      // animate={isInView ? 'animate' : 'initial'}
       variants={lettersAnim(stagger, quick)}
     >
       {letters.map((l, i) => (
         <motion.span
           key={i}
           variants={individualLetter(quick)}
-          className="inline-block will-change-transform"
+          className="inline-block will-change-auto"
+          // initial={{
+          //   y: '200%',
+          // }}
+          // animate={{
+          //   y: '0',
+          // }}
         >
           {l}
         </motion.span>
