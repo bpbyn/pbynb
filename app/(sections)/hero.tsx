@@ -88,12 +88,14 @@ export default function Hero() {
                 <motion.span
                   key={i}
                   initial={{
-                    y: '200%',
+                    y: '50px',
                   }}
                   animate={{
                     y: '0',
                   }}
                   transition={{ duration: 0.9, ease: 'anticipate', delay: i * 0.04 }}
+                  // variants={{
+                  // }}
                 >
                   <span className="will-change-transform">{l}</span>
                 </motion.span>
