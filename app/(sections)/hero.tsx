@@ -2,7 +2,7 @@
 
 // import { Icons } from '@/components/icons';
 // import LinkToAction from '@/motion-components/link-to-action';
-import MaskText from '@/motion-components/mask-text';
+// import MaskText from '@/motion-components/mask-text';
 // import MaskText from '@/motion-components/mask-text';
 // import StaggerText from '@/motion-components/stagger-text';
 // import TiltCard from '@/motion-components/tilt-card';
@@ -58,7 +58,21 @@ export default function Hero() {
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
               {about.map((l, i) => (
-                <MaskText key={i}>{l}&nbsp;</MaskText>
+                // <MaskText key={i}>{l}&nbsp;</MaskText>
+                <div className="overflow-hidden will-change-transform" key={i}>
+                  <motion.div
+                    initial={{
+                      y: '150%',
+                    }}
+                    animate={{ y: '0' }}
+                    transition={{
+                      duration: 2,
+                      ease: [0.76, 0, 0.1, 1],
+                    }}
+                  >
+                    {l + ' '}
+                  </motion.div>
+                </div>
               ))}
             </div>
             <motion.div
