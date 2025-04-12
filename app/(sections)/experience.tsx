@@ -300,9 +300,9 @@ export default function Experience() {
           </div>
         </motion.div>
         {experience.map((e, i) => (
-          <div className="sticky top-0 h-[100svh]" key={`company-${e}-${i}`}>
+          <div className="sticky top-0 h-svh" key={`company-${e}-${i}`}>
             <div
-              className="relative border-t border-t-muted bg-background_second px-0 py-10 sm:py-8 md:pt-6 lg:p-8"
+              className="relative border-t border-t-muted bg-background_second p-10 px-0 last:pb-0 sm:py-8 md:pt-6 lg:p-8"
               style={{
                 top: `calc(20vh + ${5.75 * i}em)`,
                 marginBottom: `${5.75 * (experience.length - i)}em`,
@@ -336,7 +336,7 @@ export default function Experience() {
           </div>
         ))}
       </span>
-      <div className="sticky top-0 h-0 sm:h-[100svh]" ref={exitAnimationRef}>
+      <div className="sticky top-0 h-0 sm:h-svh" ref={exitAnimationRef}>
         <div
           className="relative p-8"
           style={{

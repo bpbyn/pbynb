@@ -103,10 +103,7 @@ export default function Contact() {
               className="py-0 text-white md:py-4"
             >
               {[...Array(4)].map((_, i) => (
-                <DisplayText
-                  key={`displayTxt-${i}`}
-                  className="py-0 text-base-2xl md:text-base-6xl"
-                >
+                <DisplayText key={`displayTxt-${i}`}>
                   <span className="uppercase">Brian Punongbayan</span>
                   <span className="font-mono text-base-xs leading-none text-muted">
                     &nbsp;[2025]&nbsp;
