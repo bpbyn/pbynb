@@ -69,14 +69,7 @@ export default function Experience() {
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
                     illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
                     veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
-                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
-                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
-                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
-                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
       techUsed: [
         'Lit',
         'Javascript',
@@ -96,14 +89,7 @@ export default function Experience() {
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
                     illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
                     veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
-                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
-                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
-                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
-                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
       techUsed: [
         'React',
         'Typescript',
@@ -140,14 +126,7 @@ export default function Experience() {
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
                     illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
                     veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
-                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
-                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
-                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
-                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
       techUsed: [
         'Angular',
         'React',
@@ -174,26 +153,14 @@ export default function Experience() {
       description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
                     illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
                     veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
-                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Sed repellat laudantium illum quia magni, doloribus nemo neque
-                    commodi! Quis id iure dolor doloremque veritatis consequatur ullam sit totam
-                    amet numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
-                    repellat laudantium illum quia magni, doloribus nemo neque commodi! Quis id iure
-                    dolor doloremque veritatis consequatur ullam sit totam amet numquam.`,
+                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
       techUsed: ['Python', 'Unix'],
     },
     {
       company: 'reed elsevier philippines',
       duration: '2015 - 2017',
       role: 'Programmer',
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni,
-                    doloribus nemo neque commodi! Quis id iure dolor doloremque veritatis
-                    consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet consectetur`,
+      description: `Code, test and modify data following insurance policies per specified procedures`,
       techUsed: ['Pascal Delphi'],
     },
   ];

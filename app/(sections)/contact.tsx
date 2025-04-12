@@ -81,7 +81,7 @@ export default function Contact() {
               <div className="absolute bottom-8 right-8 hidden size-20 overflow-hidden rounded-full lg:block">
                 <a
                   className="group relative flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-slate-500/35 bg-slate-500/35"
-                  onClick={() => onNavClick('#home')}
+                  onClick={() => onNavClick('#preload')}
                   href=""
                 >
                   <span className="absolute size-20 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0"></span>

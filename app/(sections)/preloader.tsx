@@ -61,7 +61,7 @@ export default function PreLoader() {
   const dimensions = useDimension();
 
   return (
-    <>
+    <div id="preload">
       <div
         className="pointer-events-none fixed top-0 z-[999] w-full bg-black"
         style={{
@@ -73,6 +73,6 @@ export default function PreLoader() {
       {dimensions.width > 0 && (
         <CubicBezierSvg width={dimensions.width} height={dimensions.height} />
       )}
-    </>
+    </div>
   );
 }
