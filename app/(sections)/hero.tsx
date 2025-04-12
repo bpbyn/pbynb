@@ -70,9 +70,9 @@ export default function Hero() {
       id="home"
     >
       {/* gradients */}
-      <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
+      {/* <div className="absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
       <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px]" />
-      <div className="absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
+      <div className="absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px]" /> */}
       {/* gradients */}
 
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
