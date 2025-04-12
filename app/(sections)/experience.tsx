@@ -346,8 +346,8 @@ export default function Experience() {
         ></div>
       </div>
 
-      <div className="absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent blur-[300px]" />
-      <div className="absolute right-0 top-0 z-10 h-1/6 w-1/2 bg-accent blur-[400px]" />
+      <div className="invisible absolute bottom-[20%] left-24 z-10 h-96 w-1/5 bg-accent blur-[300px] md:visible" />
+      <div className="invisible absolute right-0 top-0 z-10 h-1/6 w-1/2 bg-accent blur-[400px] md:visible" />
     </section>
   );
 }

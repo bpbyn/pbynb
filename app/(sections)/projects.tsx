@@ -178,8 +178,8 @@ export default function Projects() {
           ))}
         </aside>
       </div>
-      <div className="absolute right-0 top-0 z-10 h-1/2 w-1/2 bg-accent blur-[350px]" />
-      <div className="absolute bottom-0 left-32 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px]" />
+      <div className="invisible absolute right-0 top-0 z-10 h-1/2 w-1/2 bg-accent blur-[350px] md:visible" />
+      <div className="invisible absolute bottom-0 left-32 z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px] md:visible" />
     </motion.section>
   );
 }

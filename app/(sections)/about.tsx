@@ -150,9 +150,9 @@ export default function About() {
             y={y2}
           />
           {/* top gradient on pics */}
-          <div className="absolute -top-48 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[200px]" />
+          <div className="invisible absolute -top-48 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[200px] md:visible" />
           {/* bottom gradient on pics */}
-          <div className="absolute bottom-0 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[250px]" />
+          <div className="invisible absolute bottom-0 right-0 z-0 h-96 w-96 rounded-full bg-accent blur-[250px] md:visible" />
         </div>
       </div>
       {/* <div className="bg-accent absolute -bottom-24 left-1/2 h-96 w-96 -translate-x-[50%] rounded-full blur-[200px]" /> */}
