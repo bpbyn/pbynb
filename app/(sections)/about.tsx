@@ -96,26 +96,26 @@ export default function About() {
                   I’m always open to new opportunities, collaborations, and challenges that inspire
                   creativity and drive progress. Let’s build something amazing together!
                 </p>
-                <p className="flex items-center gap-4 pt-2 md:pt-8">
+                <p className="flex flex-wrap items-center gap-4 pt-2 md:pt-8">
                   <LinkToAction
                     href="https://www.linkedin.com/in/bpunongbayan30/"
                     label="LINKEDIN"
-                    className="px-2 py-2 text-mono sm:px-4 sm:py-2"
+                    className="px-4 py-2 text-mono"
                   />
                   <LinkToAction
                     href="https://github.com/bpbyn"
                     label="GITHUB"
-                    className="px-2 py-2 text-mono sm:px-4 sm:py-2"
+                    className="px-4 py-2 text-mono"
                   />
                   <LinkToAction
                     href="https://www.instagram.com/bpbyn_/"
                     label="INSTAGRAM"
-                    className="px-2 py-2 text-mono sm:px-4 sm:py-2"
+                    className="px-4 py-2 text-mono"
                   />
                   <LinkToAction
                     href="mailto:punongbayan.brian@gmail.com"
                     label="GMAIL"
-                    className="px-2 py-2 text-mono sm:px-4 sm:py-2"
+                    className="px-4 py-2 text-mono"
                   />
                 </p>
               </motion.div>

@@ -10,7 +10,7 @@ const slide = {
   },
   animate: {
     top: '-100vh',
-    transition: { duration: 0.75, delay: 0.35, ease: [0.99, 0.1, 0.24, 0.95] },
+    transition: { duration: 1, delay: 0.35, ease: [0.99, 0.1, 0.24, 0.95] },
     transitionEnd: {
       top: '-100vh',
     },
@@ -40,7 +40,7 @@ const CubicBezierSvg = ({ width, height }: { width: number; height: number }) =>
 
   const targetPath = `
     M0 0 
-    Q${width / 2} 300 ${width} 0
+    Q${width / 2} 0 ${width} 0
     L${width} ${height}
     Q${width / 2} ${height - 500} 0 ${height}
     L0 0
@@ -61,7 +61,7 @@ export default function PreLoader() {
   const dimensions = useDimension();
 
   return (
-    <div id="preload">
+    <div>
       <div
         className="pointer-events-none fixed top-0 z-[999] w-full bg-black"
         style={{

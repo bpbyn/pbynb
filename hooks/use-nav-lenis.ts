@@ -16,6 +16,10 @@ export const useNavLenis = () => {
         targetPosition -= window.innerHeight - 3000;
       }
 
+      if (targetId === 'home') {
+        targetPosition = 0;
+      }
+
       // Scroll to the calculated position
       lenis.scrollTo(targetPosition, {
         duration: 1,

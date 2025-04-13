@@ -70,7 +70,7 @@ export default function Contact() {
                     <a
                       className="group relative grid overflow-hidden border-b border-b-muted"
                       onClick={() => onNavClick(id)}
-                      href={id === '#home' ? '' : id}
+                      href={id === '#home' ? '#' : id}
                     >
                       <div className="ease-expo absolute flex w-full translate-y-0 cursor-pointer items-center justify-between overflow-hidden px-4 pb-4 transition-all duration-500 sm:group-hover:-translate-y-full">
                         <span>{title}</span>
@@ -90,8 +90,8 @@ export default function Contact() {
               <div className="absolute bottom-8 right-8 hidden size-20 overflow-hidden rounded-full lg:block">
                 <a
                   className="group relative flex size-20 items-center justify-center overflow-hidden rounded-full border-2 border-slate-500/35 bg-slate-500/35"
-                  onClick={() => onNavClick('#preload')}
-                  href=""
+                  onClick={() => onNavClick('#home')}
+                  href="#"
                 >
                   <span className="absolute size-20 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0"></span>
 
