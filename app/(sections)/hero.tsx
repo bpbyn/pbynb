@@ -177,6 +177,25 @@ export default function Hero() {
           </motion.span>
         </div>
       </div>
+      {/* <a
+        className="bg-secondary-300 tracking-base text-accent-200 border-secondary-100 px-space-sm py-space-2xs text-baseall group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full border font-medium uppercase"
+        target="_blank"
+        href="https://www.instagram.com/by_huy/"
+      >
+        <span className="absolute inset-0 z-10 block overflow-hidden">
+          <span className="ease-expo block h-full w-full translate-y-full rounded-t-[15rem] bg-blue-300 text-red-100 transition-all duration-500 sm:group-hover:translate-y-0 sm:group-hover:rounded-none"></span>
+        </span>
+        <span className="relative z-20 block overflow-hidden transition-all">
+          <span
+            data-after="Instagram"
+            className="after:ease-expo block after:absolute after:left-0 after:block after:translate-y-0 after:transition-all after:duration-500 after:content-[attr(data-after)] sm:group-hover:after:-translate-y-[100%]"
+          >
+            <span className="ease-expo flex transition-all duration-500 sm:group-hover:-translate-y-full">
+              Instagram
+            </span>
+          </span>
+        </span>
+      </a> */}
     </motion.section>
   );
 }
