@@ -32,6 +32,10 @@ export default function Hero() {
     clamp: true,
   });
 
+  const rotate = useTransform(smoothVelocity, [0, 0.05], [0, 45], {
+    clamp: true,
+  });
+
   return (
     <motion.section
       className="relative h-svh min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
@@ -40,7 +44,7 @@ export default function Hero() {
     >
       {/* gradients */}
       <div className="invisible absolute bottom-16 left-32 -z-10 h-96 w-1/5 bg-accent opacity-80 blur-[200px] md:visible" />
-      <div className="invisible absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[150px] md:visible" />
+      <div className="absolute right-1/3 top-1/3 -z-10 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[60px] md:blur-[150px]" />
       <div className="invisible absolute bottom-32 right-14 -z-10 h-1/2 w-1/2 bg-accent blur-[350px] md:visible" />
       {/* gradients */}
 
@@ -59,7 +63,7 @@ export default function Hero() {
               ))}
             </div>
             <motion.div
-              className="relative cursor-pointer justify-self-end md:hidden"
+              className="relative cursor-pointer justify-self-end grayscale hover:grayscale-0 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -67,25 +71,25 @@ export default function Hero() {
                 ease: [0.76, 0, 0.1, 1],
               }}
             >
-              <TiltCard className="w-auto">
-                <Image
-                  src={'/me/me.png'}
-                  alt="brian punongbayan"
-                  className="rounded-3xl object-cover"
-                  sizes="(max-width: 640px) 70vw, (max-width: 768px) 100vw, (max-width: 1024px) 300px, (max-width: 1280px) 380px, (max-width: 1536px) 500px, 500px"
-                  width={300}
-                  height={300}
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxWidth: '200px',
-                    transform: 'translateZ(75px)',
-                  }}
-                  placeholder="blur"
-                  blurDataURL={'/images/placeholder.svg'}
-                  priority
-                />
-              </TiltCard>
+              {/* <TiltCard className="w-auto"> */}
+              <Image
+                src={'/me/me.png'}
+                alt="brian punongbayan"
+                className="rounded-3xl object-cover"
+                sizes="(max-width: 640px) 70vw, (max-width: 768px) 100vw, (max-width: 1024px) 300px, (max-width: 1280px) 380px, (max-width: 1536px) 500px, 500px"
+                width={300}
+                height={300}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxWidth: '200px',
+                  transform: 'translateZ(75px)',
+                }}
+                placeholder="blur"
+                blurDataURL={'/images/placeholder.svg'}
+                priority
+              />
+              {/* </TiltCard> */}
             </motion.div>
           </div>
           <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
@@ -97,7 +101,11 @@ export default function Hero() {
           </div>
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
-            <LinkToAction href="https://www.google.com" label="SAY HELLO" className="font-mono" />
+            <LinkToAction
+              href="mailto:punongbayan.brian@gmail.com"
+              label="SAY HELLO"
+              className="font-light"
+            />
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -105,6 +113,7 @@ export default function Hero() {
                 duration: 3.5,
                 ease: [0.76, 0, 0.1, 1],
               }}
+              style={{ rotate }}
             >
               <Icons.arrow45deg className="h-9 w-9 rotate-90 md:hidden" />
             </motion.span>
@@ -168,25 +177,6 @@ export default function Hero() {
           </motion.span>
         </div>
       </div>
-      {/* <a
-        className="bg-secondary-300 tracking-base text-accent-200 border-secondary-100 px-space-sm py-space-2xs text-baseall group pointer-events-auto relative flex h-fit w-fit transform-none items-center justify-center overflow-hidden rounded-full border font-medium uppercase"
-        target="_blank"
-        href="https://www.instagram.com/by_huy/"
-      >
-        <span className="absolute inset-0 z-10 block overflow-hidden">
-          <span className="ease-expo block h-full w-full translate-y-full rounded-t-[15rem] bg-blue-300 text-red-100 transition-all duration-500 sm:group-hover:translate-y-0 sm:group-hover:rounded-none"></span>
-        </span>
-        <span className="relative z-20 block overflow-hidden transition-all">
-          <span
-            data-after="Instagram"
-            className="after:ease-expo block after:absolute after:left-0 after:block after:translate-y-0 after:transition-all after:duration-500 after:content-[attr(data-after)] sm:group-hover:after:-translate-y-[100%]"
-          >
-            <span className="ease-expo flex transition-all duration-500 sm:group-hover:-translate-y-full">
-              Instagram
-            </span>
-          </span>
-        </span>
-      </a> */}
     </motion.section>
   );
 }

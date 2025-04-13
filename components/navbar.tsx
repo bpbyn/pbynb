@@ -4,6 +4,7 @@ import { useNavLenis } from '@/hooks/use-nav-lenis';
 import { anim } from '@/lib/utils';
 import ScrambleText from '@/motion-components/scramble-text';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 export const navigation = [
@@ -87,7 +88,10 @@ export default function Navbar() {
           {...anim(entrance)}
         >
           <div className="grid gap-2">
-            <motion.h3 className="text-base-xl leading-none">bpbyn.</motion.h3>
+            <Link href="/">
+              <motion.h3 className="text-base-xl leading-none">bpbyn.</motion.h3>
+            </Link>
+
             {/* <span>
             <span className="text-mono font-mono leading-none text-muted">BULACAN, PH ©</span>
             <span className="text-mono font-mono leading-none text-muted">

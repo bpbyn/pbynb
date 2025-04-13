@@ -21,8 +21,8 @@ export default function Contact() {
         <section className="relative flex h-screen flex-col" id="contact">
           {/* <div className="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent blur-[350px]" /> */}
           {/* <div className="absolute h-1/2 w-full translate-y-[50%] bg-accent blur-[350px]" /> */}
-          <div className="relative grid h-full grid-cols-1 gap-4 px-8 py-8 md:grid-cols-2 lg:px-16 xl:gap-52 xl:px-36">
-            <div className="grid place-content-between gap-8 sm:gap-0 lg:pt-16">
+          <div className="relative grid h-full grid-cols-1 gap-16 px-8 pb-2 pt-8 md:grid-cols-2 md:gap-0 md:py-8 lg:px-16 xl:gap-52 xl:px-36">
+            <div className="grid gap-4 md:place-content-start md:gap-16 lg:pt-16">
               <div className="w-full">
                 <span className="font-mono text-base font-light text-muted lg:text-base-md">
                   <ScrambleText className="px-0">{`// WHAT ARE YOU WAITING FOR?`}</ScrambleText>
@@ -46,13 +46,22 @@ export default function Contact() {
                   </StaggerText>
                 </h3>
                 <h3 className="max-w-md text-base-4xl leading-[4rem] tracking-normal sm:text-base-5xl sm:leading-[5rem] md:hidden">
-                  <MaskText>Reach out,</MaskText>
-                  <MaskText>don’t doubt—</MaskText>
-                  <MaskText>let’s figure it out</MaskText>
+                  <StaggerText stagger={true} quick={false}>
+                    Reach out,
+                  </StaggerText>
+                  <StaggerText stagger={false} quick={false}>
+                    don’t doubt—
+                  </StaggerText>
+                  <StaggerText stagger={true} quick={false} className="flex flex-wrap">
+                    let’s figure it out
+                  </StaggerText>
                 </h3>
               </div>
-              <LinkToAction label="LET'S TALK" />
-              <div />
+              <LinkToAction
+                label="LET'S TALK"
+                className="font-light"
+                href="mailto:punongbayan.brian@gmail.com"
+              />
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">
               <div className="flex h-full flex-col justify-center gap-8 font-serif text-base-2xl leading-none sm:text-base-3xl">
@@ -63,13 +72,13 @@ export default function Contact() {
                       onClick={() => onNavClick(id)}
                       href={id === '#home' ? '' : id}
                     >
-                      <div className="ease-expo absolute flex w-full translate-y-0 cursor-pointer items-center justify-between overflow-hidden px-4 pb-4 transition-all duration-500 group-hover:-translate-y-full">
+                      <div className="ease-expo absolute flex w-full translate-y-0 cursor-pointer items-center justify-between overflow-hidden px-4 pb-4 transition-all duration-500 sm:group-hover:-translate-y-full">
                         <span>{title}</span>
-                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 group-hover:-translate-x-8 group-hover:-rotate-45" />
+                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 sm:group-hover:-translate-x-8 sm:group-hover:-rotate-45" />
                       </div>
-                      <div className="ease-expo flex translate-y-full cursor-pointer items-center justify-between px-4 pb-4 transition-all duration-500 group-hover:translate-y-0">
+                      <div className="ease-expo flex translate-y-full cursor-pointer items-center justify-between px-4 pb-4 transition-all duration-500 sm:group-hover:translate-y-0">
                         <span>{title}</span>
-                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 group-hover:-rotate-45" />
+                        <Icons.arrow45deg className="ease-expo h-7 w-7 transition-all duration-500 sm:group-hover:-rotate-45" />
                       </div>
                     </a>
                   </MaskText>

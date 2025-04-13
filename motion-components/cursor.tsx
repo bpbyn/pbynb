@@ -104,7 +104,7 @@ export default function Cursor({ linksRef }: { linksRef: RefObject<HTMLDivElemen
       {cursorTexts.length > 0 && (
         <>
           <motion.span
-            className="rounded-lg bg-slate-500/35 px-4 py-2 text-xs"
+            className="rounded-lg bg-slate-500/35 px-4 py-2 text-mono"
             {...anim(cursorAnimation())}
           >
             {cursorTexts[0]}

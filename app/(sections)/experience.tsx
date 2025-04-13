@@ -216,16 +216,16 @@ export default function Experience() {
               <motion.div style={{ scale: scaleExit }}>
                 <LinkToAction
                   style={{ scale }}
-                  href="https://www.google.com"
+                  href="../Brian-C-Punongbayan.pdf"
                   label="RESUME"
-                  className="px-8 py-4"
+                  className="px-6 py-4"
                 />
               </motion.div>
               <motion.div style={{ scale: scaleExit }}>
                 <motion.div className="relative" style={{ scale }}>
                   <a
                     className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
-                    href="https://www.google.com"
+                    href="../Brian-C-Punongbayan.pdf"
                   >
                     <span className="group relative flex size-14 items-center justify-center overflow-hidden rounded-full bg-slate-500/35 lg:size-16">
                       <span className="absolute size-14 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0 lg:size-16"></span>
@@ -290,7 +290,7 @@ export default function Experience() {
                   <div className="flex flex-wrap gap-2">
                     {e.techUsed.map((t, i) => (
                       <span
-                        className="whitespace-nowrap text-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-mono"
+                        className="whitespace-nowrap text-nowrap rounded-full bg-slate-500/35 px-2 py-1 text-mono md:px-4"
                         key={`tech-${i}`}
                       >
                         {t}

@@ -162,10 +162,10 @@ export default function Projects() {
                       </span>
                       <span className="whitespace-nowrap text-base-xl font-bold">{w.name}</span>
                     </div>
-                    <div className="flex flex-wrap items-center gap-2 self-end md:self-auto">
+                    <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
                       {w.techUsed.map((t, i) => (
                         <span
-                          className="w-fit whitespace-nowrap rounded-full bg-slate-500/35 px-4 py-1 text-mono leading-tight"
+                          className="w-fit whitespace-nowrap rounded-full bg-slate-500/35 px-2 py-1 text-mono leading-tight md:px-4"
                           key={`tech-${i}`}
                         >
                           {t}
