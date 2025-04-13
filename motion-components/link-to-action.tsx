@@ -36,17 +36,22 @@ export default function LinkToAction({
       onMouseEnter={() => setOverrideHover(true)}
       onMouseLeave={() => setOverrideHover(false)}
       onClick={(e) => {
-        setOverrideHover(true);
         if (!isDesktop) {
           e.preventDefault();
+          setOverrideHover(true);
+
+          // Wait one frame to ensure React applies the new state and styles
           setTimeout(() => {
-            if (target === '_blank') {
-              window.open(href, '_blank');
-            } else {
-              window.location.href = href!;
-            }
-            setOverrideHover(false);
-          }, 500);
+            // Wait for the hover animation to complete
+            setTimeout(() => {
+              if (target === '_blank') {
+                window.open(href, '_blank');
+              } else {
+                window.location.href = href!;
+              }
+              setOverrideHover(false);
+            }, 500);
+          }, 0);
         }
       }}
       initial={{ opacity: 0 }}
@@ -60,7 +65,7 @@ export default function LinkToAction({
         <span
           className="block h-full w-full translate-y-full rounded-t-[15rem] bg-accent transition-all duration-500 ease-in-out sm:group-hover:translate-y-0 sm:group-hover:rounded-none"
           style={{
-            transform: !isDesktop && overrideHover ? `translateY(0)` : undefined,
+            transform: !isDesktop && overrideHover ? `translateY(0px)` : undefined,
             borderRadius: !isDesktop && overrideHover ? 0 : undefined,
           }}
         ></span>
