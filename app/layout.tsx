@@ -27,6 +27,9 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: 'Brian Punongbayan',
   description: 'My latest portfolio.',
+  icons: {
+    icon: '/logo.ico',
+  },
 };
 
 export default function RootLayout({
