@@ -1,34 +1,12 @@
 'use client';
 
 import { useNavLenis } from '@/hooks/use-nav-lenis';
+import { staticData as data } from '@/lib/constants';
 import { anim } from '@/lib/utils';
 import ScrambleText from '@/motion-components/scramble-text';
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'motion/react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-
-export const navigation = [
-  {
-    title: 'HOME',
-    id: '#home',
-  },
-  {
-    title: 'ABOUT',
-    id: '#about',
-  },
-  {
-    title: 'EXPERIENCE',
-    id: '#experience',
-  },
-  {
-    title: 'PROJECTS',
-    id: '#projects',
-  },
-  {
-    title: 'CONTACT',
-    id: '#contact',
-  },
-];
 
 const scroll = (scrollVal: number) => {
   return {
@@ -76,6 +54,10 @@ export default function Navbar() {
     setScrollVal(current);
   });
 
+  const {
+    navigation: { title, links },
+  } = data;
+
   return (
     <AnimatePresence>
       <motion.header
@@ -89,18 +71,11 @@ export default function Navbar() {
         >
           <div className="grid gap-2">
             <Link href="/">
-              <motion.h3 className="text-base-xl leading-none">bpbyn.</motion.h3>
+              <motion.h3 className="text-base-xl leading-none">{title}</motion.h3>
             </Link>
-
-            {/* <span>
-            <span className="text-mono font-mono leading-none text-muted">BULACAN, PH ©</span>
-            <span className="text-mono font-mono leading-none text-muted">
-              14.7824°N, 120.9621°E
-            </span>
-          </span> */}
           </div>
           <nav className="flex flex-col items-end gap-1 font-mono text-base-xs font-medium text-muted lg:flex-row lg:items-center lg:justify-evenly lg:gap-8 lg:text-base">
-            {navigation.slice(1, 5).map((nav, i) => (
+            {links.slice(1, 5).map((nav, i) => (
               <a
                 href={nav.id}
                 onClick={() => onNavClick(nav.id)}

@@ -1,17 +1,13 @@
 'use client';
 
 import { Icons } from '@/components/icons';
+import { staticData as data } from '@/lib/constants';
 import LinkToAction from '@/motion-components/link-to-action';
 import MaskText from '@/motion-components/mask-text';
 import StaggerText from '@/motion-components/stagger-text';
 import TiltCard from '@/motion-components/tilt-card';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import Image from 'next/image';
-
-const about = [
-  'I’m a Full Stack Developer specializing in intuitive front-end development.',
-  'I craft pixel-perfect user interfaces that bring ideas to life.',
-];
 
 export default function Hero() {
   const { scrollYProgress } = useScroll();
@@ -36,6 +32,10 @@ export default function Hero() {
     clamp: true,
   });
 
+  const {
+    hero: { firstName, lastName, primaryRole, roleDesc, contact, footerScroll, footerLocation },
+  } = data;
+
   return (
     <motion.section
       className="relative h-svh min-h-svh px-8 pb-8 lg:px-16 xl:px-36"
@@ -51,14 +51,14 @@ export default function Hero() {
       <div className="grid h-full grid-cols-[1fr_auto] lg:grid-cols-2">
         <div className="flex h-full flex-col items-start justify-end gap-8 lg:gap-24 2xl:gap-32">
           <div className="relative font-serif text-base-4xl leading-none tracking-tight text-foreground sm:text-base-6xl sm:leading-[4rem] lg:text-heading lg:leading-[6.5rem] 2xl:text-heading-md">
-            <StaggerText stagger={true}>brian</StaggerText>
+            <StaggerText stagger={true}>{firstName}</StaggerText>
             <StaggerText className="pb-3 md:pb-8" stagger={true}>
-              punongbayan
+              {lastName}
             </StaggerText>
           </div>
           <div className="grid grid-cols-2 place-items-center gap-4 overflow-hidden sm:gap-8 md:hidden">
             <div className="text-base-xs font-light leading-relaxed text-muted sm:w-auto sm:text-base">
-              {about.map((l, i) => (
+              {roleDesc.map((l, i) => (
                 <MaskText key={i}>{l}&nbsp;</MaskText>
               ))}
             </div>
@@ -71,7 +71,6 @@ export default function Hero() {
                 ease: [0.76, 0, 0.1, 1],
               }}
             >
-              {/* <TiltCard className="w-auto"> */}
               <Image
                 src={'/me/me.png'}
                 alt="brian punongbayan"
@@ -89,11 +88,10 @@ export default function Hero() {
                 blurDataURL={'/images/placeholder.svg'}
                 priority
               />
-              {/* </TiltCard> */}
             </motion.div>
           </div>
           <div className="hidden text-base-xs font-light text-muted sm:w-auto md:block xl:text-base">
-            {about.map((l, i) => (
+            {roleDesc.map((l, i) => (
               <MaskText key={i} className="will-change-transform">
                 {l}&nbsp;
               </MaskText>
@@ -101,11 +99,7 @@ export default function Hero() {
           </div>
 
           <div className="flex w-full flex-row-reverse items-center justify-between md:block">
-            <LinkToAction
-              href="mailto:punongbayan.brian@gmail.com"
-              label="SAY HELLO"
-              className="font-light"
-            />
+            <LinkToAction href={contact.target} label={contact.label} className="font-light" />
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -127,7 +121,7 @@ export default function Hero() {
               ease: [0.76, 0, 0.1, 1],
             }}
           >
-            © 2025 BULACAN, PH
+            {footerLocation}
           </motion.span>
         </div>
         <div className="hidden h-full place-content-end gap-8 md:grid lg:gap-16 xl:gap-28">
@@ -161,8 +155,8 @@ export default function Hero() {
             </TiltCard>
           </motion.div>
           <div className="relative hidden h-full text-base-5xl leading-[4rem] tracking-tight text-foreground md:inline-block lg:text-base-6xl lg:leading-[6rem] 2xl:text-heading">
-            <StaggerText className="font-serif">front-end</StaggerText>
-            <StaggerText className="pb-4 pr-2 font-serif">developer</StaggerText>
+            <StaggerText className="font-serif">{primaryRole[0]}</StaggerText>
+            <StaggerText className="pb-4 pr-2 font-serif">{primaryRole[1]}</StaggerText>
           </div>
           <motion.span
             className="w-full text-right font-mono text-base-xs font-light text-muted lg:text-base"
@@ -173,7 +167,7 @@ export default function Hero() {
               ease: [0.76, 0, 0.1, 1],
             }}
           >
-            ( SCROLL TO EXPLORE )
+            {footerScroll}
           </motion.span>
         </div>
       </div>

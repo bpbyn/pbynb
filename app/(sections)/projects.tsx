@@ -1,5 +1,6 @@
 'use client';
 
+import { staticData as data } from '@/lib/constants';
 import Cursor from '@/motion-components/cursor';
 import ScrambleText from '@/motion-components/scramble-text';
 import StaggerText from '@/motion-components/stagger-text';
@@ -67,6 +68,10 @@ export default function Projects() {
     },
   ];
 
+  const {
+    projects: { header, body },
+  } = data;
+
   return (
     <motion.section
       className="relative z-10 min-h-screen rounded-b-3xl bg-background_second px-8 py-8 pt-16 lg:px-16 xl:px-36"
@@ -77,19 +82,19 @@ export default function Projects() {
       <div className="relative z-20 flex flex-col gap-16 md:flex-row md:items-end md:justify-between">
         <div>
           <span className="font-mono text-base font-light text-muted lg:text-base-md">
-            <ScrambleText className="px-0">{`// WHAT I'VE BUILT?`}</ScrambleText>
+            <ScrambleText className="px-0">{header[0]}</ScrambleText>
           </span>
           <h3 className="text-base-5xl leading-[3rem] tracking-tight md:max-w-lg lg:text-base-6xl lg:leading-[6rem]">
             <StaggerText stagger={true} quick={true}>
-              Pixels and
+              {header[1]}
             </StaggerText>
             <StaggerText stagger={false} quick={true}>
-              Code
+              {header[2]}
             </StaggerText>
           </h3>
         </div>
         <div className="flex justify-between gap-8">
-          <div className="min-w-fit font-mono text-base font-light text-muted">(WORKS)</div>
+          <div className="min-w-fit font-mono text-base font-light text-muted">{body.title}</div>
           <motion.div
             className="max-w-sm text-base-xs"
             initial={{ opacity: 0 }}
@@ -100,8 +105,7 @@ export default function Projects() {
               duration: 1.5,
             }}
           >
-            These are projects I’ve put my time and effort to complete. I hope you’ll like it as
-            much as I do!
+            {body.description}
           </motion.div>
         </div>
       </div>
@@ -113,7 +117,7 @@ export default function Projects() {
               className="ease-in-out-cubic absolute flex h-full w-fit flex-col transition-transform duration-500"
               style={{ transform: `translateY(${-100 * activeIndex}%)` }}
             >
-              {works.map((work, i) => (
+              {body.works.map((work, i) => (
                 <span className="inline-block" key={`${work}-${i}`}>
                   {i + 1}.
                 </span>
@@ -122,7 +126,7 @@ export default function Projects() {
           </div>
         </div>
         <aside className="relative z-20 grid grid-cols-1 gap-8 pt-8 text-4xl md:gap-20" ref={ref}>
-          {works.map((w, i) => (
+          {body.works.map((w, i) => (
             <div
               key={`projects-${i}`}
               ref={(ref) => {

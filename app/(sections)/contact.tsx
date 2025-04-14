@@ -1,8 +1,8 @@
 'use client';
 
 import { Icons } from '@/components/icons';
-import { navigation } from '@/components/navbar';
 import { useNavLenis } from '@/hooks/use-nav-lenis';
+import { staticData as data } from '@/lib/constants';
 import DisplayText from '@/motion-components/display-text';
 import LinkToAction from '@/motion-components/link-to-action';
 import MaskText from '@/motion-components/mask-text';
@@ -13,6 +13,11 @@ import React from 'react';
 
 export default function Contact() {
   const { onNavClick } = useNavLenis();
+
+  const {
+    contact: { header, body },
+    navigation: { links },
+  } = data;
 
   return (
     <div className="-mt-[100svh] overflow-hidden">
@@ -25,47 +30,47 @@ export default function Contact() {
             <div className="grid gap-4 md:place-content-start md:gap-16 lg:pt-16">
               <div className="w-full">
                 <span className="font-mono text-base font-light text-muted lg:text-base-md">
-                  <ScrambleText className="px-0">{`// WHAT ARE YOU WAITING FOR?`}</ScrambleText>
+                  <ScrambleText className="px-0">{header}</ScrambleText>
                 </span>
                 {/* <h3 className="text-base-5xl leading-[3rem] tracking-tight md:max-w-lg lg:text-base-6xl lg:leading-[6rem]"> */}
                 <h3 className="hidden gap-1 overflow-hidden text-base-6xl leading-[6rem] tracking-normal md:grid md:max-w-md">
                   <StaggerText stagger={true} quick={false}>
-                    Reach
+                    {body.title[0]}
                   </StaggerText>
                   <StaggerText stagger={false} quick={false}>
-                    out, don’t
+                    {body.title[1]}
                   </StaggerText>
                   <StaggerText stagger={true} quick={false}>
-                    doubt—
+                    {body.title[2]}
                   </StaggerText>
                   <StaggerText stagger={false} quick={false} className="pb-2">
-                    let’s figure
+                    {body.title[3]}
                   </StaggerText>
                   <StaggerText stagger={true} quick={false}>
-                    it out
+                    {body.title[4]}
                   </StaggerText>
                 </h3>
                 <h3 className="max-w-md text-base-4xl leading-[4rem] tracking-normal sm:text-base-5xl sm:leading-[5rem] md:hidden">
                   <StaggerText stagger={true} quick={false}>
-                    Reach out,
+                    {body.titleMobile[0]}
                   </StaggerText>
                   <StaggerText stagger={false} quick={false}>
-                    don’t doubt—
+                    {body.titleMobile[1]}
                   </StaggerText>
                   <StaggerText stagger={true} quick={false} className="flex flex-wrap">
-                    let’s figure it out
+                    {body.titleMobile[2]}
                   </StaggerText>
                 </h3>
               </div>
               <LinkToAction
-                label="LET'S TALK"
+                label={body.contact.label}
                 className="font-light"
-                href="mailto:punongbayan.brian@gmail.com"
+                href={body.contact.target}
               />
             </div>
             <div className="grid h-full grid-rows-[1fr_auto]">
               <div className="flex h-full flex-col justify-center gap-8 font-serif text-base-2xl leading-none sm:text-base-3xl">
-                {navigation.slice(0, 4).map(({ id, title }, i) => (
+                {links.slice(0, 4).map(({ id, title }, i) => (
                   <MaskText key={`shortcut-${i}`} duration={1.9}>
                     <a
                       className="group relative grid overflow-hidden border-b border-b-muted"
@@ -85,7 +90,7 @@ export default function Contact() {
                 ))}
               </div>
               <span className="inline max-w-sm text-base-xs font-light text-muted">
-                © 2025 Brian Punongbayan. All rights reserved.
+                {body.copyright}
               </span>
               <div className="absolute bottom-8 right-8 hidden size-20 overflow-hidden rounded-full lg:block">
                 <a
@@ -113,9 +118,9 @@ export default function Contact() {
             >
               {[...Array(4)].map((_, i) => (
                 <DisplayText key={`displayTxt-${i}`}>
-                  <span className="uppercase">Brian Punongbayan</span>
+                  <span className="uppercase">{body.displayText[0]}</span>
                   <span className="font-mono text-base-xs leading-none text-muted">
-                    &nbsp;[2025]&nbsp;
+                    &nbsp;{body.displayText[1]}&nbsp;
                   </span>
                 </DisplayText>
               ))}

@@ -1,6 +1,7 @@
 'use client';
 
 import { Icons } from '@/components/icons';
+import { staticData as data } from '@/lib/constants';
 import LinkToAction from '@/motion-components/link-to-action';
 import ScrambleText from '@/motion-components/scramble-text';
 import StaggerText from '@/motion-components/stagger-text';
@@ -49,121 +50,9 @@ export default function Experience() {
   const scaleExit = useTransform(smoothExitScale, [0, 1], [1, 0]);
   const scaleButton = useTransform(smoothButtonScale, [0, 1], [0, 1]);
 
-  // useMotionValueEvent(scrollScaleProgress, 'change', (current) => {
-  //   console.log(current);
-  // });
-
-  const companies = [
-    'ing',
-    'asurion',
-    'dxc technology',
-    'willis towers watson',
-    'reed elsevier philippines',
-  ];
-
-  const experience = [
-    {
-      company: 'ing',
-      duration: 'Present',
-      role: 'Engineer III',
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
-      techUsed: [
-        'Lit',
-        'Javascript',
-        'Typescript',
-        'Java',
-        'Spring Boot',
-        'Azure',
-        'Storybook',
-        'Splunk',
-        'Adobe Analytics',
-      ],
-    },
-    {
-      company: 'asurion',
-      duration: '2021 - 2024',
-      role: 'Software Engineer II',
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
-      techUsed: [
-        'React',
-        'Typescript',
-        'AWS',
-        'GraphQL',
-        'WebSockets',
-        'Twilio',
-        'Contentful',
-        'Storybook',
-        'React Query',
-        'Redux',
-        'Chakra UI',
-        'TailwindCSS',
-        'Styled Components',
-        'Material UI',
-        'Ant Design',
-        'Node',
-        'Java',
-        'JAX RS',
-        'DynamoDB',
-        'PostgreSQL',
-        'Vite',
-        'Playwright',
-        'Mixpanel',
-        'Fullstory',
-        'Jenkins',
-        'Github Actions',
-      ],
-    },
-    {
-      company: 'dxc technology',
-      duration: '2019 - 2021',
-      role: 'Technology Consultant II',
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
-      techUsed: [
-        'Angular',
-        'React',
-        'Typescript',
-        'Javascript',
-        'HTML',
-        'CSS',
-        'ChartJS',
-        'Python',
-        'Django',
-        'C#',
-        'Spring Boot',
-        'Kafka',
-        'Jenkins',
-        'SonarQube',
-        'Azure',
-        'PostgreSQL',
-      ],
-    },
-    {
-      company: 'willis towers watson',
-      duration: '2018 - 2019',
-      role: 'Software Developer',
-      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed repellat laudantium
-                    illum quia magni, doloribus nemo neque commodi! Quis id iure dolor doloremque
-                    veritatis consequatur ullam sit totam amet numquam. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Sed repellat laudantium illum quia magni.`,
-      techUsed: ['Python', 'Unix'],
-    },
-    {
-      company: 'reed elsevier philippines',
-      duration: '2015 - 2017',
-      role: 'Programmer',
-      description: `Code, test and modify data following insurance policies per specified procedures`,
-      techUsed: ['Pascal Delphi'],
-    },
-  ];
+  const {
+    experience: { header, subHeader, resume, professionalExperience },
+  } = data;
 
   return (
     <section
@@ -177,19 +66,19 @@ export default function Experience() {
       >
         <div>
           <span className="font-mono text-base font-light text-muted lg:text-base-md">
-            <ScrambleText className="px-0">{`// WHERE I'VE BEEN?`}</ScrambleText>
+            <ScrambleText className="px-0">{header[0]}</ScrambleText>
           </span>
           <h3 className="text-base-5xl leading-[3rem] tracking-tighter md:max-w-lg md:tracking-tight lg:text-base-6xl lg:leading-[6rem]">
             <StaggerText stagger={true} quick={true}>
-              Professional
+              {header[1]}
             </StaggerText>
             <StaggerText stagger={false} quick={true}>
-              Timeline
+              {header[2]}
             </StaggerText>
           </h3>
         </div>
         <div className="flex justify-between gap-8">
-          <div className="min-w-fit font-mono text-base font-light text-muted">(EXPERIENCE)</div>
+          <div className="min-w-fit font-mono text-base font-light text-muted">{subHeader[0]}</div>
           <motion.div
             className="max-w-sm text-base-xs"
             initial={{ opacity: 0 }}
@@ -200,8 +89,7 @@ export default function Experience() {
               duration: 1.5,
             }}
           >
-            Every project, role, and collaboration has shaped the way I think, create, and solve
-            problems.
+            {subHeader[1]}
           </motion.div>
         </div>
       </div>
@@ -216,8 +104,8 @@ export default function Experience() {
               <motion.div style={{ scale: scaleExit }}>
                 <LinkToAction
                   style={{ scale }}
-                  href="../Brian-C-Punongbayan.pdf"
-                  label="RESUME"
+                  href={resume.target}
+                  label={resume.label}
                   className="px-6 py-4"
                 />
               </motion.div>
@@ -225,9 +113,9 @@ export default function Experience() {
                 <motion.div className="relative" style={{ scale }}>
                   <a
                     className="tracking-base group pointer-events-auto relative transform-none overflow-hidden"
-                    href="../Brian-C-Punongbayan.pdf"
+                    href={resume.target}
                   >
-                    <span className="group relative flex size-14 items-center justify-center overflow-hidden rounded-full bg-slate-500/35 lg:size-16">
+                    <span className="group relative flex size-14 items-center justify-center overflow-hidden rounded-full bg-slate-500/20 lg:size-16">
                       <span className="absolute size-14 translate-y-full rotate-45 rounded-full bg-accent transition-all duration-500 group-hover:translate-y-0 lg:size-16"></span>
                       <svg
                         id="progress"
@@ -266,13 +154,13 @@ export default function Experience() {
             </div>
           </div>
         </motion.div>
-        {experience.map((e, i) => (
+        {professionalExperience.map((e, i) => (
           <div className="sticky top-0 h-svh" key={`company-${e}-${i}`}>
             <div
               className="relative border-t border-t-muted bg-background_second p-10 px-0 last:pb-0 sm:py-8 md:pt-6 lg:p-8"
               style={{
                 top: `calc(20vh + ${5.75 * i}em)`,
-                marginBottom: `${5.75 * (experience.length - i)}em`,
+                marginBottom: `${5.75 * (professionalExperience.length - i)}em`,
               }}
             >
               <div className="flex items-center justify-between leading-tight">
@@ -307,7 +195,7 @@ export default function Experience() {
         <div
           className="relative p-8"
           style={{
-            top: `calc(8vh + ${5.75 * companies.length}em)`,
+            top: `calc(8vh + ${5.75 * professionalExperience.length}em)`,
             marginBottom: '0em',
           }}
         ></div>
