@@ -77,7 +77,7 @@ export const staticData = {
     ],
     resume: {
       label: 'RESUME',
-      target: '../Brian-C-Punongbayan.pdf',
+      target: '../Brian Punongbayan 2025.pdf',
     },
     professionalExperience: [
       {
