@@ -84,7 +84,7 @@ export const staticData = {
         company: 'ing',
         duration: 'Present',
         role: 'Engineer III',
-        description: `Developed and maintained the loans application platform, delivering high-quality user-facing features and enhancements. Utilized the Lit Component to build lightweight, efficient web components and leveraged the Azure Cloud Platform for deployment and integration. Collaborated with cross-functional teams to implement new functionalities, improve existing components, and resolve bugs. Actively contributed to improving developer experience by introducing tools and sharing best practices to streamline workflows and boost productivity.`,
+        description: `Developed and maintained the loans application platform, delivering high-quality user-facing features and enhancements. Utilized Lit to build lightweight, efficient web components and leveraged the Azure Cloud Platform for deployment and integration. Collaborated with cross-functional teams to implement new functionalities, improve existing components, and resolve bugs. Actively contributed to improving developer experience by introducing tools and sharing best practices to streamline workflows and boost productivity.`,
         techUsed: [
           'Lit',
           'Javascript',
